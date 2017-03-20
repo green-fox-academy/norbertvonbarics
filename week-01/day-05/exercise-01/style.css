@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: "starwars";
-    src: url(starjedi.ttf) format("truetype");
+    src: url(./starjedi.ttf) format("truetype");
 }
 
 body {
@@ -27,23 +27,22 @@ h3 {
 .myname {
   position: absolute;
   font-size: 70px;
-  color: white;
-  text-shadow: 10px 10px 30px rgb(80,80,80);
   top: 300px;
-  font-family: starwars;
-  margin: 30px 25%;
-  text-align: center;
 }
 
 .hi {
   position: absolute;
   font-size: 30px;
-  color: white;
-  text-shadow: 10px 10px 30px rgb(80,80,80);
   top: 280px;
+}
+
+.hi,
+.myname {
+  text-shadow: 10px 10px 30px rgb(80,80,80);
+  color: white;
   font-family: starwars;
-  margin: 30px 25%;
   text-align: center;
+  margin: 30px 25%;
 }
 
 
@@ -52,26 +51,15 @@ h3 {
 }
 
 .workplaces {
-  background-color: rgb(255,255,255);
-  margin: 30px 25%;
-  width: 700px;
   height: 800px;
-  border-radius: 5px;
   padding: 10px;
   transition: 1s;
-  font-family: 'Fjalla One', sans-serif;
-
 }
 
 .education {
-  background-color: rgb(255,255,255);
-  margin: 30px 25%;
-  width: 700px;
   height: 950px;
-  border-radius: 5px;
   padding: 10px;
   transition: 1s;
-  font-family: 'Fjalla One', sans-serif;
 }
 
 .two017 {
@@ -81,8 +69,12 @@ h3 {
 
 .workplaces,
 .education {
+  margin: 30px 25%;
+  background-color: rgb(255,255,255);
+  width: 700px;
   line-height: 2;
   position: relative;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .workplaces:hover {
@@ -104,15 +96,13 @@ h3 {
 }
 
 .saberstext {
-  position: absolute;
   font-size: 70px;
   color: #5abe25;
   text-shadow: 10px 10px 30px rgb(80,80,80);
-  top: 2700px;
-  margin: 30px 100px 450px 550px;
+  text-align: center;
   font-family: starwars;
-  z-index: 1;
 }
+
 
 .quotebox {
   font-size: 40px;
@@ -151,8 +141,3 @@ span {
   margin: 0 0 0 50px;
   font-weight: bold;
 }
-
-/*
-font-family: 'Fjalla One', sans-serif;
-font-family: 'Lato', sans-serif;
-*/
