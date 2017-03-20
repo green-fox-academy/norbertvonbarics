@@ -1,0 +1,158 @@
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+    font-family: "starwars";
+    src: url(starjedi.ttf) format("truetype");
+}
+
+body {
+  background-color: rgb(255,255,255);
+}
+
+.headerpic {
+  width: 100%;
+  position: relative;
+  opacity: .8;
+  margin: 0 0 30px 0;
+}
+
+h3 {
+  font-size: 25px;
+  margin: 15px 0 0 0;
+}
+
+.myname {
+  position: relative;
+  font-size: 70px;
+  color: white;
+  text-shadow: 10px 10px 30px rgb(80,80,80);
+  font-family: starwars;
+  margin: 30px 25%;
+  text-align: center;
+}
+
+.hi {
+  position: absolute;
+  font-size: 30px;
+  color: white;
+  text-shadow: 10px 10px 30px rgb(80,80,80);
+/*  top: 280px;*/
+  font-family: starwars;
+  margin: 30px 25%;
+  text-align: center;
+}
+
+
+.places {
+  list-style-type: none;
+}
+
+.workplaces {
+  background-color: rgb(255,255,255);
+  margin: 30px 25%;
+  width: 700px;
+  height: 800px;
+  border-radius: 5px;
+  padding: 10px;
+  transition: 1s;
+  font-family: 'Fjalla One', sans-serif;
+
+}
+
+.education {
+  background-color: rgb(255,255,255);
+  margin: 30px 25%;
+  width: 700px;
+  height: 950px;
+  border-radius: 5px;
+  padding: 10px;
+  transition: 1s;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.two017 {
+  font-size: 200%;
+}
+
+
+.workplaces,
+.education {
+  line-height: 2;
+  position: relative;
+}
+
+.workplaces:hover {
+  margin:  30px 45% 0 30px;
+  text-shadow: 20px 20px 20px rgb(170,170,170);
+  transition: 1s;
+}
+
+.education:hover {
+  margin:  30px 0 30px 45%;
+  text-shadow: 20px 20px 20px rgb(170,170,170);
+  transition: 1s;
+}
+
+.footerpic {
+  position: relative;
+  width:100%;
+  opacity: .8;
+}
+
+.saberstext {
+  position: absolute;
+  font-size: 70px;
+  color: #5abe25;
+  text-shadow: 10px 10px 30px rgb(80,80,80);
+  top: 2700px;
+  margin: 30px 100px 450px 550px;
+  font-family: starwars;
+  z-index: 1;
+}
+
+.quotebox {
+  font-size: 40px;
+  width: 500px;
+  height: 100px;
+  margin: 10px;
+  padding-left: 50px;
+  text-shadow: none;
+  text-align: center;
+  font-family: starwars;
+}
+
+.quotemark {
+  width: 50px;
+  margin: 20px;
+  font-family: starwars;
+}
+
+.border {
+  border-bottom: 2px solid black;
+  padding-bottom: 30px;
+}
+
+.subheader {
+  font-family: starwars;
+  font-size: 30px;
+  margin: 20px;
+}
+
+span {
+  font-size: 130%;
+  font-weight: bold;
+}
+
+.typelist {
+  margin: 0 0 0 50px;
+  font-weight: bold;
+}
+
+/*
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Lato', sans-serif;
+*/

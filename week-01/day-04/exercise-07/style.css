@@ -1,0 +1,26 @@
+.big {
+  color: blue;
+}
+
+.container .asteroid {
+  border: 1px solid green;
+  display: block;
+  width: 300px;
+}
+
+div {
+  font-weight: bold;
+}
+
+p.asteroid.big {
+  background-color: yellow;
+  width: 300px;
+}
+
+
+/*
+make 'The Businessman' and 'The Lamplighter' blue colored
+add 'The King' and 'The Conceited Man' a 1 pixel wide green border each
+make 'The King', 'The Conceited Man' and 'The Lamplighter' bold
+add 'The Businessman' a yellow background
+*/

@@ -1,0 +1,35 @@
+
+div {
+  font-size: 36px;
+  width: 348px;
+  margin: 0;
+  padding: 40px 0;
+  font-family: 'Open Sans', sans-serif;
+
+}
+section {
+  border: 16px solid rgb(66, 133, 244);
+  width: 348px;
+}
+
+.table div {
+  text-align: center;
+  color: white;
+
+}
+
+.north {
+  background-color: rgb(230, 118, 118);
+}
+
+.east {
+  background-color: rgb(242, 240, 98);
+}
+
+.south {
+  background-color: rgb(169, 230, 230);
+}
+
+.west {
+  background-color: rgb(168, 146, 228);
+}

@@ -1,0 +1,13 @@
+.listone {
+  list-style: none;
+}
+
+h2 {
+
+  color: rgb(0, 85, 102);
+  background-color: rgb(14, 145, 161);
+  border: 5px solid rgb(125, 206, 148);
+  width: 300px;
+  padding: 16px 0 80px 20px;
+  font-family: 'Open Sans', sans-serif;
+}

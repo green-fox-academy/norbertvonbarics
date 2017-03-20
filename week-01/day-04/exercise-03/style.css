@@ -1,0 +1,23 @@
+h2 {
+  font-size: 36px;
+  width: 350px;
+  margin: 0;
+  padding: 40px 0;
+  color: white;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+div {
+  border: 16px solid rgb(66, 133, 244);
+  width: 350px;
+  margin: 5px;
+}
+
+.north {
+  background-color: rgb(230, 118, 118);
+}
+
+.south {
+  background-color: rgb(169, 230, 230);
+}

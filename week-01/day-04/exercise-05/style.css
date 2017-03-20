@@ -1,0 +1,26 @@
+
+h1 {
+  font-size: 30px;
+}
+
+.title {
+  color: blue;
+}
+
+h2 {
+  color: rgb(237, 158, 27);
+}
+
+ul {
+  color: black;
+  list-style: square;
+  font-size: 18px;
+}
+
+.red {
+  color: rgb(250, 0, 30);
+}
+
+.style {
+  list-style: initial;
+}
