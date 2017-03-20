@@ -40,7 +40,7 @@ h3 {
 .myname {
   text-shadow: 10px 10px 30px rgb(80,80,80);
   color: white;
-  font-family: starwars;
+  font-family: starwars, 'Fjalla One', sans-serif;
   text-align: center;
   margin: 30px 25%;
 }
@@ -100,7 +100,7 @@ h3 {
   color: #5abe25;
   text-shadow: 10px 10px 30px rgb(80,80,80);
   text-align: center;
-  font-family: starwars;
+  font-family: starwars, 'Fjalla One', sans-serif;
 }
 
 
@@ -112,13 +112,13 @@ h3 {
   padding-left: 50px;
   text-shadow: none;
   text-align: center;
-  font-family: starwars;
+  font-family: starwars, 'Fjalla One', sans-serif;
 }
 
 .quotemark {
   width: 50px;
   margin: 20px;
-  font-family: starwars;
+  font-family: starwars, 'Fjalla One', sans-serif;
 }
 
 .border {
@@ -127,7 +127,7 @@ h3 {
 }
 
 .subheader {
-  font-family: starwars;
+  font-family: starwars, 'Fjalla One', sans-serif;
   font-size: 30px;
   margin: 20px;
 }
