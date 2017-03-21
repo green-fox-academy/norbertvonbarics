@@ -8,7 +8,7 @@ public class TwoNumberGirls {
     int userInput2 = scanner.nextInt();
     if(userInput1 == userInput2) {
       System.out.println("the party is excellent!");
-    } else if (userInput1 + userInput2 > 20){
+    } else if ((userInput1 + userInput2 > 20) && (userInput1 != userInput2)){
       System.out.println("Quite cool party!");
     } else if(userInput1 + userInput2 < 20) {
       System.out.println("Average party...");
