@@ -1,12 +1,18 @@
 import java.util.Scanner;
 public class TwoNumberGirls {
   public static void main(String[] args) {
-    Scanner scanner = new scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
     System.out.println("number of girls?");
     int userInput1 = scanner.nextInt();
     System.out.println("number of boys?");
     int userInput2 = scanner.nextInt();
-
+    if(userInput1 == userInput2) {
+      System.out.println("the party is excellent!");
+    } else if (userInput1 + userInput2 > 20){
+      System.out.println("Quite cool party!");
+    } else if {
+      
+    }
   }
 }
 
