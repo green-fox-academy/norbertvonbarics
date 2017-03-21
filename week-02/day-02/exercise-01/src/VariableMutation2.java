@@ -18,10 +18,10 @@ public class VariableMutation2 {
     // if less than 10 set out2 to "More!",
     // if more than 20 set out2 to "Less!"
     if((10 <= b) && (b <= 20)) {
-      System.out.println("Sweet!");
+      out2 = "Sweet!";
     } else if(b < 10){
-      System.out.println("More!");
-    } else System.out.println("Less!");
+      out2 = "More!";
+    } else {out2 = "Less!";}
 
     System.out.println(out2);
 
@@ -59,7 +59,13 @@ public class VariableMutation2 {
     // if time is more than 200
     // set out3 to "Time out"
     // otherwise set out3 to "Run Forest Run!"
-
+    if((d % 4 == 0) && (time < 200)){
+      out3 = "check";
+    } else if(time > 200){
+      out3 = "Time out";
+    } else {
+      out3 = "Run Forest Run!";
+    }
 
     System.out.println(out3);
   }
