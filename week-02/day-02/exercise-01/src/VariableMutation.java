@@ -100,7 +100,7 @@ public class VariableMutation {
 
     String k = "Apple";
     //fill the k variable with its cotnent 4 times
-
+    k = k + k + k + k;
 
     System.out.println(k);
   }
