@@ -7,6 +7,5 @@ public class MileToKmConverter {
     Scanner scanner = new Scanner(System.in);
     int userInput1 = scanner.nextInt();
     System.out.println(userInput1 + "km = " + (double) userInput1 * 0.621371192 + " mile!");
-
   }
 }
