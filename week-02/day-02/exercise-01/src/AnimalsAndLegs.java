@@ -6,7 +6,7 @@ public class AnimalsAndLegs {
     // The first represents the number of chickens the farmer has
     // The seconf represents the number of pigs the farmer has
     // It should print how many legs all the animals have
-    Scanner scanner = scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
     System.out.println("how many chicken has the farmer?");
     int userInput1 = scanner.nextInt();
     System.out.println("how many pig has the farmer?");
