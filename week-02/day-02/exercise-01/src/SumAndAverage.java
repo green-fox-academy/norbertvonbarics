@@ -21,6 +21,7 @@ public class SumAndAverage {
     int userInput5 = scanner.nextInt();
 
     int sumUserInputs = userInput1 + userInput2 + userInput3 + userInput4 + userInput5;
-    System.out.println("The sum of your numbers is " + sumUserInputs + "!");
+    System.out.println("sum: "+ sumUserInputs);
+    System.out.println("Average: " (double) sumUserInputs / 5);
   }
 }
