@@ -1,11 +1,18 @@
 import java.util.Scanner;
 public class TwoNumberCompare {
   public static void main(String[] args) {
-    Scanner scanner = Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
     System.out.println("give me a number!");
-    int userInput1 = new scanner.nextInt();
+    int userInput1 = scanner.nextInt();
     System.out.println("an another one...");
-    int userInput2 = new scanner.nextInt();
+    int userInput2 = scanner.nextInt();
+    if(userInput1 > userInput2){
+      System.out.println("The second number should be bigger");
+    } else {
+      for(int i = userInput1; i < userInput2; i++){
+        System.out.println(i);
+      }
+    }
   }
 }
 // Create a program that asks for two numbers
