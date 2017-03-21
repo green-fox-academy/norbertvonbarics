@@ -10,7 +10,7 @@ public class TwoNumberGirls {
       System.out.println("the party is excellent!");
     } else if ((userInput1 + userInput2 > 20) && (userInput1 != userInput2)){
       System.out.println("Quite cool party!");
-    } else if(userInput1 + userInput2 < 20) {
+    } else if((userInput1 + userInput2 < 20) && (userInput1 != 0)) {
       System.out.println("Average party...");
     } else if (userInput1 == 0){
       System.out.println("sausage party...");
