@@ -3,8 +3,10 @@ public class VariableMutation2 {
     double a = 24;
     int out = 0;
     // if w is even increment out by one
-
-
+    // hope you think of "a" as "w"...
+    if(a % 2 == 0){
+      out++;
+    }
     System.out.println(out);
 
 
@@ -27,13 +29,21 @@ public class VariableMutation2 {
 
     int c = 123;
     int credits = 100;
-    boolean isBonus = False;
+    boolean isBonus = false;
     // if credits are at least 50,
     // and isBonus is false decrement c by 2
     // if credits are smaller than 50,
     // and isBonus is false decrement c by 1
     // if isBonus is true c should remain the same
-
+    if((credits >= 50) && (isBonus == false)){
+      c -= 2;
+      System.out.println(c);
+    } else if((credits < 50) && (isBonus == false)){
+      c -= 1;
+      System.out.println(c);
+    } else{
+      System.out.println("c is the same");
+    }
 
     System.out.println(c);
 
