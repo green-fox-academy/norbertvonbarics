@@ -1,13 +1,15 @@
 
 public class Pyramid {
   public static void main(String[] args) {
-    int number = 5;
-    for(int i = 0; i < number +1;i++){
-      for(int j = 0; j < number+1 -i; j++){
-        System.out.print(" ");
-      }
-      for(int k = 0; k <= i; k++){
-        System.out.print("* ");
+    int number = 11;
+    for (int i = 0; i < number; i++) {
+      int spaceCount = (number - i);
+      for(int j = 0; j< number; j++) {
+        if(j < spaceCount || j >= (number - spaceCount)) {
+          System.out.print(" ");
+        } else {
+          System.out.print("*");
+        }
       }
       System.out.println();
     }
