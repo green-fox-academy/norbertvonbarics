@@ -1,12 +1,15 @@
 
 public class PrintArguments {
   public static void main(String[] args) {
-    String input = "this is a string";
+    String[] input = {"a", "b", "c", "d", "e"};
     System.out.println(printer(input));
   }
-  public static String printer(String a){
-    String[] parts = a.split("");
-    return parts;
+  public static String printer(String[] a){
+    String x = "";
+    for(int i = 0; i < a.length; i++) {
+      x += (a[i] + " ");
+    }
+    return x;
   }
 }
 
