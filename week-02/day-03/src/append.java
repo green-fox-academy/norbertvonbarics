@@ -1,11 +1,12 @@
 
 public class append {
   public static void main(String[] args) {
-    String am= "kuty";
+    String am = "kuty";
     System.out.println(AppendA(am));
   }
-  public static String AppendA(String a){
-    return a +"a";
+
+  public static String AppendA(String a) {
+    return a + "a";
   }
 }
 

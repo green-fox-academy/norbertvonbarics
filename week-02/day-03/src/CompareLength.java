@@ -7,8 +7,9 @@ public class CompareLength {
     int[] p2 = {4, 5};
     System.out.println(Arrays.toString(compare(p1, p2)));
   }
-  public static int[] compare(int[]a, int[]b ) {
-    if(a.length > b.length){
+
+  public static int[] compare(int[] a, int[] b) {
+    if (a.length > b.length) {
       return a;
     } else {
       return b;

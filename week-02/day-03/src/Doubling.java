@@ -6,7 +6,8 @@ public class Doubling {
     int ak = 123;
     System.out.println(doubling(ak));
   }
+
   public static int doubling(int i) {
-    return i *2;
+    return i * 2;
   }
 }

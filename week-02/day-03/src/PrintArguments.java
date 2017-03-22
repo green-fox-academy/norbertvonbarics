@@ -4,9 +4,10 @@ public class PrintArguments {
     String[] input = {"a", "b", "c", "d", "e"};
     System.out.println(printer(input));
   }
-  public static String printer(String[] a){
+
+  public static String printer(String[] a) {
     String x = "";
-    for(int i = 0; i < a.length; i++) {
+    for (int i = 0; i < a.length; i++) {
       x += (a[i] + " ");
     }
     return x;

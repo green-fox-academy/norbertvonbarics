@@ -4,7 +4,8 @@ public class SumOfElements {
     int[] r = {54, 23, 66, 12};
     System.out.println(sum(r));
   }
-  public static int sum(int[] a){
+
+  public static int sum(int[] a) {
     return a[1] + a[2];
   }
 }

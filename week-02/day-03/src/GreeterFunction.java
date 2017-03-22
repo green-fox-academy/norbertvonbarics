@@ -10,7 +10,8 @@ public class GreeterFunction {
     String al = "Greenfox";
     greet(al);
   }
-  public static void greet(String i){
+
+  public static void greet(String i) {
     System.out.println("Hello " + i + "!");
   }
 }

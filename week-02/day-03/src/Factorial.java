@@ -4,17 +4,19 @@ public class Factorial {
     int num1 = 5;
     System.out.println(factorio(num1));
   }
-  public static int factorio(int a){
+
+  public static int factorio(int a) {
     int x = 1;
-    if(a == 1){
+    if (a == 1) {
       x = a;
-    } else if(a > 1){
-      for(int i = 1; i < a + 1; i++){
+    } else if (a > 1) {
+      for (int i = 1; i < a + 1; i++) {
         x *= i;
       }
     } else {
       x = 0;
-    } return x;
+    }
+    return x;
   }
 }
 
