@@ -1,14 +1,20 @@
 public class OverlinedBox {
   public static void main(String[] args) {
-    int num = 8;
-    for(int i = 0; i < num; i++){
-      if((i == 0) || (i == num -1)){
-        System.out.println("%%%%%");
-      } else {
-        for(int j = 1; j < num -1; j++){
-
+    int num = 6;
+    for (int i = 0; i < num; i++) {
+     /* if ((i == 0) || (i == 5)) {
+        System.out.print("%%%%%");
+      }*/
+      for (int j = 0; j < num -1; j++) {
+        if ((i == 0) && (j == 0) || (i == 5) && (j == 0)) {
+          System.out.print("%%%%%");
+        } else if ((j == i) || (j == 0)) /*|| (j == 4)) */{
+          System.out.print("%");
+        } else {
+          System.out.print(" ");
         }
       }
+      System.out.println();
     }
   }
 }
