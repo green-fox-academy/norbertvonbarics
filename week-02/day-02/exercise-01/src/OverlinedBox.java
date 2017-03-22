@@ -2,9 +2,6 @@ public class OverlinedBox {
   public static void main(String[] args) {
     int num = 6;
     for (int i = 0; i < num; i++) {
-     /* if ((i == 0) || (i == 5)) {
-        System.out.print("%%%%%");
-      }*/
       for (int j = 0; j < num -1; j++) {
         boolean b1 = (j == i) || (j == 0);
         boolean b2 = (j == 4) && ((i != 0) && (i != num -1));
