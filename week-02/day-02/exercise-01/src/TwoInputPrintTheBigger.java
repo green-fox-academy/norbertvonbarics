@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class TwoInputPrintTheBigger {
   public static void main(String[] args) {
     System.out.println("Please add two numbers!");
@@ -14,7 +15,6 @@ public class TwoInputPrintTheBigger {
     }
   }
 }
-
 
 
 // Write a program that asks for two numbers and prints the bigger one

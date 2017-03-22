@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class TwoNumberGirls {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -6,13 +7,13 @@ public class TwoNumberGirls {
     int userInput1 = scanner.nextInt();
     System.out.println("number of boys?");
     int userInput2 = scanner.nextInt();
-    if(userInput1 == userInput2) {
+    if (userInput1 == userInput2) {
       System.out.println("the party is excellent!");
-    } else if ((userInput1 + userInput2 > 20) && (userInput1 != userInput2)){
+    } else if ((userInput1 + userInput2 > 20) && (userInput1 != userInput2)) {
       System.out.println("Quite cool party!");
-    } else if((userInput1 + userInput2 < 20) && (userInput1 != 0)) {
+    } else if ((userInput1 + userInput2 < 20) && (userInput1 != 0)) {
       System.out.println("Average party...");
-    } else if (userInput1 == 0){
+    } else if (userInput1 == 0) {
       System.out.println("sausage party...");
     } else {
       System.out.println("no party.");

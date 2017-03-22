@@ -5,11 +5,11 @@ public class Task19OneInput {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Pease add a number!");
     int userInput1 = scanner.nextInt();
-    if(userInput1 < 1) {
+    if (userInput1 < 1) {
       System.out.println("Not enough!");
-    } else if(userInput1 == 1){
+    } else if (userInput1 == 1) {
       System.out.println("One!");
-    } else if(userInput1 == 2){
+    } else if (userInput1 == 2) {
       System.out.println("Two!");
     } else {
       System.out.println("A lot");

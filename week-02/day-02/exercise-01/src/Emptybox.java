@@ -2,10 +2,10 @@
 public class Emptybox {
   public static void main(String[] args) {
     int num = 6;
-    for(int i = 0; i < num; i++){
-        if((i == 0) || (i == num -1)){
-          System.out.println("%%%%%");
-        } else {
+    for (int i = 0; i < num; i++) {
+      if ((i == 0) || (i == num - 1)) {
+        System.out.println("%%%%%");
+      } else {
         System.out.println("%   %");
       }
     }

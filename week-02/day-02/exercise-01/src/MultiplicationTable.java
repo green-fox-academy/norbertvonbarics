@@ -5,7 +5,7 @@ public class MultiplicationTable {
     System.out.println("give me a number!");
     Scanner scanner = new Scanner(System.in);
     int userInput1 = scanner.nextInt();
-    for(int i = 0; i < 11; i++){
+    for (int i = 0; i < 11; i++) {
       System.out.println(i + " * " + userInput1 + " = " + i * userInput1);
     }
   }

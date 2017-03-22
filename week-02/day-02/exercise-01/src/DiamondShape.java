@@ -2,25 +2,23 @@
 public class DiamondShape {
   public static void main(String[] args) {
     int number = 13;
-    for(int i = 0;i < number +2; i++) {
-      if(i < number/2 +1) {
+    for (int i = 0; i < number + 2; i++) {
+      if (i < number / 2 + 1) {
         for (int j = 0; j < number - i; j++) {
           System.out.print(" ");
         }
         for (int k = 1; k <= (i * 2 - 1); k++) {
           System.out.print("*");
         }
-      } else{
-        for (int k = 1; k <= (i -1 ); k++) {
+      } else {
+        for (int k = 1; k <= (i - 1); k++) {
           System.out.print(" ");
-        /*  System.out.print(k);*/
         }
-        for (int j = 0; j < (number - i) *2 +1; j++) {
+        for (int j = 0; j < (number - i) * 2 + 1; j++) {
           System.out.print("*");
-         /* System.out.print(j);*/
         }
-
-      } System.out.println();
+      }
+      System.out.println();
     }
   }
 }

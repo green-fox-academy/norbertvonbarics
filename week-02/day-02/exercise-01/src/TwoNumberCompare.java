@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class TwoNumberCompare {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -6,10 +7,10 @@ public class TwoNumberCompare {
     int userInput1 = scanner.nextInt();
     System.out.println("an another one...");
     int userInput2 = scanner.nextInt();
-    if(userInput1 > userInput2){
+    if (userInput1 > userInput2) {
       System.out.println("The second number should be bigger");
     } else {
-      for(int i = userInput1; i < userInput2; i++){
+      for (int i = userInput1; i < userInput2; i++) {
         System.out.println(i);
       }
     }
