@@ -47,6 +47,20 @@ public class StudentCounter {
         System.out.println(map.get(i).get("name"));
       }
     }
+
+    int candy = 0;
+    String age = new String();
+    double age1 = 0;
+    double agesum = 0;
+    for (int j = 0; j < map.size(); j++) {
+      candy = Integer.parseInt(map.get(j).get("candies").toString());
+      if (candy < 5) {
+        age = map.get(j).get("age").toString();
+        age1 = Double.parseDouble(age);
+        agesum += age1;
+        System.out.println(agesum);
+      }
+    }
   }
 }
 
