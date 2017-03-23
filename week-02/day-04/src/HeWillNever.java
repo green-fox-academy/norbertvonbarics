@@ -19,6 +19,10 @@ public class HeWillNever {
     for (int i = 0; i < notSoCrypticMessage.length; i++) {
         out += hmap.get(notSoCrypticMessage[i]);
     }
+
+    for (int j : notSoCrypticMessage) {
+      out += hmap.get(j);
+    }
     System.out.println(out);
   }
 }
