@@ -1,8 +1,9 @@
 public class UrlFixer {
   public static void main(String... args){
     String url = "https//www.reddit.com/r/nevertellmethebots";
-    String replace = url.replace("bots", "odds");
-
+    String subString = url.substring(5);
+    String start = "https:" + subString;
+    String replace = start.replace("bots", "odds");
 
     System.out.println(replace);
   }
