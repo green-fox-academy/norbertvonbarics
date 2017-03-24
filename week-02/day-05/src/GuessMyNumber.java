@@ -4,7 +4,7 @@ public class GuessMyNumber {
   public static void main(String[] args) {
     Scanner myScanner = new Scanner(System.in);
 
-    System.out.println("Please select the difficulty of the game:\n 1 - Easy \n 2 - medium \n 3 - hard");
+    System.out.println("Please select the difficulty of the game:\n 1 - Easy \n 2 - Medium \n 3 - Hard");
     int range = myScanner.nextInt();
     int lives = 0;
 
@@ -45,7 +45,7 @@ public class GuessMyNumber {
         System.out.println("MY number was" + " " + myInt);
       } else if (myInt != userInput) {
         if (myInt > userInput) {
-          System.out.println("Your number is to low!");
+          System.out.println("Your number is too low!");
         } else {
           System.out.println("Your number is too high!");
         }
