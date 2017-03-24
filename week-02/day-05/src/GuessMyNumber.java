@@ -10,12 +10,24 @@ public class GuessMyNumber {
 
     double random = Math.floor((Math.random() * range) + 1);
     int myInt = (int) random;
-    System.out.println(myInt);
 
-    for (int i = 3; i > 0; i--) {
+    for (int i = 10; i > 0; i--) {
       int userInput = myScanner.nextInt();
       if ((i == 1) && (myInt != userInput)) {
-        System.out.println("YOU LOSE! MY number was" + " " + (int) random);
+        System.out.println(" __     ______  _    _       \n" +
+                " \\ \\   / / __ \\| |  | |      \n" +
+                "  \\ \\_/ / |  | | |  | |      \n" +
+                "   \\   /| |  | | |  | |      \n" +
+                "    | | | |__| | |__| |      \n" +
+                "  _ |_|  \\____/ \\____/______ \n" +
+                " | |    / __ \\ / ____|  ____|\n" +
+                " | |   | |  | | (___ | |__   \n" +
+                " | |   | |  | |\\___ \\|  __|  \n" +
+                " | |___| |__| |____) | |____ \n" +
+                " |______\\____/|_____/|______|\n" +
+                "                             \n" +
+                "                             ");
+        System.out.println("MY number was" + " " + myInt);
       } else if (myInt != userInput) {
         if (myInt > userInput) {
           System.out.println("Your number is to low!");
@@ -24,7 +36,20 @@ public class GuessMyNumber {
         }
         System.out.println("Guess again!" + " " + "remain guesses: " + (i - 1));
       } else if (myInt == userInput) {
-        System.out.println("YOU WIN!");
+        System.out.println(" __     ______  _    _     \n" +
+                " \\ \\   / / __ \\| |  | |    \n" +
+                "  \\ \\_/ / |  | | |  | |    \n" +
+                "   \\   /| |  | | |  | |    \n" +
+                "    | | | |__| | |__| |    \n" +
+                " __ |_|  \\____/_\\____/   _ \n" +
+                " \\ \\        / /_   _| \\ | |\n" +
+                "  \\ \\  /\\  / /  | | |  \\| |\n" +
+                "   \\ \\/  \\/ /   | | | . ` |\n" +
+                "    \\  /\\  /   _| |_| |\\  |\n" +
+                "     \\/  \\/   |_____|_| \\_|\n" +
+                "                           \n" +
+                "                           ");
+        System.out.println("My number is " + myInt + "!");
       }
     }
   }
