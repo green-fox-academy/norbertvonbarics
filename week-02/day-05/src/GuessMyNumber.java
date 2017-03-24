@@ -4,22 +4,28 @@ public class GuessMyNumber {
   public static void main(String[] args) {
     Scanner myScanner = new Scanner(System.in);
 
-    System.out.println("Please add the range of the number I have to think!");
+    System.out.println("Please select the difficulty of the game:\n 1 - Easy \n 2 - medium \n 3 - hard");
     int range = myScanner.nextInt();
+    int lives = 0;
+
+    if (range == 3) {
+      lives = 5;
+      range = 200;
+    } else if (range == 2) {
+      lives = 10;
+      range = 100;
+    } else if (range == 1) {
+      lives = 5;
+      range = 50;
+    }
+
     System.out.println("Okay, my number is between 0 and" + " " + range + "!");
-    int difficulty =
+
     double random = Math.floor((Math.random() * range) + 1);
     int myInt = (int) random;
 
-    int lives = 0;
-    if ((myInt < 200) && (myInt > 100)) {
-      lives = 10;
-    } else if ((myInt < 99) && (myInt > 30)) {
-      lives = 5;
-    } else if (myInt > 201) {
-      lives = 20;
-    }
-    System.out.println("You have" + " " + lives+ " " + "lives!");
+
+    System.out.println("You have" + " " + lives+ " " + "lives! \n What is your first guess?");
     for (int i = lives; i > 0; i--) {
       int userInput = myScanner.nextInt();
       if ((i == 1) && (myInt != userInput)) {
