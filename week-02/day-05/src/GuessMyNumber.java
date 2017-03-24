@@ -6,12 +6,21 @@ public class GuessMyNumber {
 
     System.out.println("Please add the range of the number I have to think!");
     int range = myScanner.nextInt();
-    System.out.println("Okay, my number is between 0 and" + " " + range);
-
+    System.out.println("Okay, my number is between 0 and" + " " + range + "!");
+    int difficulty =
     double random = Math.floor((Math.random() * range) + 1);
     int myInt = (int) random;
 
-    for (int i = 10; i > 0; i--) {
+    int lives = 0;
+    if ((myInt < 200) && (myInt > 100)) {
+      lives = 10;
+    } else if ((myInt < 99) && (myInt > 30)) {
+      lives = 5;
+    } else if (myInt > 201) {
+      lives = 20;
+    }
+    System.out.println("You have" + " " + lives+ " " + "lives!");
+    for (int i = lives; i > 0; i--) {
       int userInput = myScanner.nextInt();
       if ((i == 1) && (myInt != userInput)) {
         System.out.println(" __     ______  _    _       \n" +
@@ -34,7 +43,7 @@ public class GuessMyNumber {
         } else {
           System.out.println("Your number is too high!");
         }
-        System.out.println("Guess again!" + " " + "remain guesses: " + (i - 1));
+        System.out.println("Guess again!" + " " + "You have" + " " + (i - 1) + " "+  "more guesses!");
       } else if (myInt == userInput) {
         System.out.println(" __     ______  _    _     \n" +
                 " \\ \\   / / __ \\| |  | |    \n" +
