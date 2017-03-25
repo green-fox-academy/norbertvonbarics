@@ -22,6 +22,7 @@ public class PalindromSearcher {
         counter++;
       }
     }
+    System.out.println(palindromList);
   }
 
   private static boolean isPalindrom(String verse) {
