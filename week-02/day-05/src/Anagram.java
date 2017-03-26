@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Anagram {
@@ -13,8 +15,12 @@ public class Anagram {
   }
 
   public static boolean isAnagram(String user1, String user2) {
-    StringBuilder reverser = new StringBuilder(user2);
-    String reversedUser2 = reverser.reverse().toString();
-    return (user1.equals(reversedUser2));
+    String[] userArray1 = user1.split("");
+    String[] userArray2 = user2.split("");
+    Arrays.sort(userArray1);
+    Arrays.sort(userArray2);
+    System.out.println(Arrays.toString(userArray1));
+    System.out.println(Arrays.toString(userArray2));
+    return (user1.equals(user2));
   }
 }
