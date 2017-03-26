@@ -15,7 +15,7 @@ public class GuessMyNumber {
       lives = 10;
       range = 100;
     } else if (range == 1) {
-      lives = 5;
+      lives = 10;
       range = 50;
     }
 
@@ -49,7 +49,7 @@ public class GuessMyNumber {
         } else {
           System.out.println("Your number is too high!");
         }
-        System.out.println("Guess again!" + " " + "You have" + " " + (i - 1) + " "+  "more guesses!");
+        System.out.println("Guess again!" + " " + "You have" + " " + (i - 1) + " "+  "more guess(es)!");
       } else if (myInt == userInput) {
         System.out.println(" __     ______  _    _     \n" +
                 " \\ \\   / / __ \\| |  | |    \n" +
