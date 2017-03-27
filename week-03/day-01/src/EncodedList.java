@@ -9,6 +9,7 @@ public class EncodedList {
   public static void main(String[] args) {
     System.out.println(fileRead());
     System.out.println(decoder(fileRead()));
+    writer(decoder(fileRead()));
   }
 
   public static List<String> decoder(List<String> text) {
@@ -29,7 +30,6 @@ public class EncodedList {
   }
 
 
-
   public static List<String> fileRead() {
     List<String> lines;
     Path text = Paths.get("assets/encoded-lines.txt");
@@ -40,6 +40,15 @@ public class EncodedList {
       lines = new ArrayList<>();
     }
     return lines;
+  }
+
+  public static void writer(List<String> text) {
+    Path output = Paths.get("assets/decodedlines.txt");
+    try {
+      Files.write(output, text);
+    } catch (IOException ex) {
+      System.out.println("PRINT ERROR");
+    }
   }
 }
 // Create a method that decrypts assets/encoded_zen_lines.txt
