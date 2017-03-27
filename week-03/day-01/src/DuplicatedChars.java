@@ -1,12 +1,10 @@
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
+import java.io.FileWriter;
 
 public class DuplicatedChars {
   public static void main(String[] args) {
@@ -16,7 +14,7 @@ public class DuplicatedChars {
       List<String> text = Files.readAllLines(duplicate);
       for (int i = 0; i < text.size(); i++) {
         String corText = "";
-        for (int j = 0;j < text.get(i).length(); j += 2){
+        for (int j = 0; j < text.get(i).length(); j += 2) {
           corText += text.get(i).charAt(j);
         }
         finalText.add(corText);
