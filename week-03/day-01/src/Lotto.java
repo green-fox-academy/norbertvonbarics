@@ -5,16 +5,14 @@ import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Lotto {
   public static void main(String[] args) {
     Path lotto = Paths.get("otos.txt");
+    ArrayList<String> numbers = new ArrayList<>();
     try {
       List<String> text = Files.readAllLines(lotto);
-      ArrayList<String> numbers = new ArrayList<>();
       String[] separate = {};
       for (String line : text) {
         separate = line.split(";");
@@ -22,18 +20,23 @@ public class Lotto {
           numbers.add(separate[i]);
         }
       }
-      System.out.println(numbers);
+     /* System.out.println(numbers);*/
     } catch (IOException ex) {
       System.out.println("Catch executed!");
     }
-    /*numberChecker(splitted)
-  }
-  public static ArrayList numberChecker(ArrayList a) {
-    System.out.println(a);
 
-    return */
-  }
 
+    System.out.println(numbers);
+    HashMap<String, Integer> sorted = new HashMap<>();
+
+    for (
+            int i = 0; i < numbers.size(); i++)
+
+    {
+      Integer count = sorted.get(numbers.get(i));
+    /*  sorted.put(numbers.get(i)), count == null ? 1 : count + 1;*/
+    }
+  }
 }
 
 // Create a method that find the 5 most common lotto numbers assets/lotto.csv
