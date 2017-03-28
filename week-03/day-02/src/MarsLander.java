@@ -26,21 +26,12 @@ class Player {
       int rotate = in.nextInt(); // the rotation angle in degrees (-90 to 90).
       int power = in.nextInt(); // the thrust power (0 to 4).
 
-      int posX = X;
-      int posY = Y;
-      int afterBurner = power;
       // Write an action using System.out.println()
       // To debug: System.err.println("Debug messages...");
-      if (posY < 3000) {
-        afterBurner = 3;
-      } else if (posY < 2000) {
-        afterBurner = 1;
-      } else if (posY < 100) {
-        afterBurner = 0;
-      }
+      if (vSpeed < -40) {power = 4;}
 
       // 2 integers: rotate power. rotate is the desired rotation angle (should be 0 for level 1), power is the desired thrust power (0 to 4).
-      System.out.println("0 3");
+      System.out.println("0 " + power);
     }
   }
 }
