@@ -29,7 +29,7 @@ class Player {
 
       String directionY = "";
       String directionX = "";
-
+      String direction = directionY.concat(directionX);
       if (thorY > lightY) {
         directionY = "N";
         thorY--;
@@ -38,7 +38,7 @@ class Player {
         thorY++;
       }
 
-      if (thorX > lightX) {
+      if (thorX > lightX)  {
         directionX = "W";
         thorX--;
       } else {
@@ -46,8 +46,16 @@ class Player {
         thorX++;
       }
 
-      // A single line providing the move to be made: N NE E SE S SW W or NW
-      System.out.println(directionY + directionX);
+      if ((thorX > lightX) && (thorY > lightY)) {
+        directionY = "N";
+        directionX = "W";
+      } else if ((thorX < lightX) && (thorY > lightY)) {
+        directionY = "N";
+        directionX = "E";
+      }
+
+        // A single line providing the move to be made: N NE E SE S SW W or NW
+        System.out.println(directionY + directionX);
     }
   }
 }
