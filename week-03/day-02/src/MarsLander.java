@@ -34,8 +34,9 @@ class MarsLander {
       if ((vSpeed < -40) && (Y > 1850)) {
         power = 3;
       } else if (Y < 1850) {
-        power = 4;}
-
+        power = 4;
+      }
+      //landed in 0:59
 
       //max = (a > b) ? a : b;
       // 2 integers: rotate power. rotate is the desired rotation angle (should be 0 for level 1), power is the desired thrust power (0 to 4).
