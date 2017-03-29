@@ -1,30 +1,17 @@
-
 import javax.swing.*;
 
 import java.awt.*;
-import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class GoToCenter {
+public class SquareInTheCenter {
 
   public static void mainDraw(Graphics graphics) {
-    // create a line drawing function that takes 2 parameters:
-    // the x and y coordinates of the line's starting point
-    // and draws a line from that point to the center of the canvas.
-    // draw 3 lines with that function.
-    lines(graphics);
-  }
+    // draw a green 10x10 square to the canvas' center.
+  graphics.setColor(Color.green);
+  graphics.fillRect(145,145,10,10);
 
-  public static void lines(Graphics line) {
-    for (int i = 0; i < 3; i++) {
-      int random1 = (int) Math.ceil((Math.random() * 300));
-      int random2 = (int) Math.ceil((Math.random() * 300));
-      line.setColor(Color.blue);
-      line.drawLine(random1, random2, 150, 150);
-    }
   }
-
 
   //    Don't touch the code below
   public static void main(String[] args) {

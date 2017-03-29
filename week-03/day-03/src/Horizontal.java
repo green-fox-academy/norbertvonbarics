@@ -15,7 +15,7 @@ public class Horizontal {
   }
 
   public static void lines(Graphics line) {
-      for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) {
       int random1 = (int) Math.ceil((Math.random() * 300));
       int random2 = (int) Math.ceil((Math.random() * 300));
       line.setColor(Color.blue);

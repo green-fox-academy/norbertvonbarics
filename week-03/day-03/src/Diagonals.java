@@ -6,10 +6,10 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Diagonals {
 
-  public static void mainDraw(Graphics graphics){
+  public static void mainDraw(Graphics graphics) {
     // draw the canvas' diagonals in green.
     graphics.setColor(Color.green);
-    graphics.fillRect(150, 150, 200,200);
+    graphics.fillRect(150, 150, 200, 200);
   }
 
   //    Don't touch the code below
@@ -21,7 +21,8 @@ public class Diagonals {
     jFrame.setLocationRelativeTo(null);
     jFrame.setVisible(true);
   }
-  static class ImagePanel extends JPanel{
+
+  static class ImagePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
