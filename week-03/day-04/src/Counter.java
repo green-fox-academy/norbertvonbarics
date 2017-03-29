@@ -6,7 +6,7 @@ public class Counter {
 
   public static int count(int num) {
     if (num == 0) {
-      return 1;
+      return 0;
     } else {
       System.out.println(num);
       return count(num - 1);
