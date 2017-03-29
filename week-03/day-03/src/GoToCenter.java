@@ -13,11 +13,15 @@ public class GoToCenter {
     // the x and y coordinates of the line's starting point
     // and draws a line from that point to the center of the canvas.
     // draw 3 lines with that function.
-      for (int i = 0; i < 3; i++) {
+    lines(graphics);
+  }
+
+  public static void lines (Graphics line) {
+    for (int i = 0; i < 3; i++) {
       int random1 = (int) Math.ceil((Math.random()*300));
       int random2 = (int) Math.ceil((Math.random()*300));
-      graphics.setColor(Color.blue);
-      graphics.drawLine(random1, random2, 150, 150);
+      line.setColor(Color.blue);
+      line.drawLine(random1, random2, 150, 150);
     }
   }
 
