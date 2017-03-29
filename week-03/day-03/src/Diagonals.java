@@ -8,15 +8,15 @@ public class Diagonals {
 
   public static void mainDraw(Graphics graphics) {
     // draw the canvas' diagonals in green.
-    graphics.drawLine(0,0,300,0);
+    graphics.drawLine(0, 0, 300, 0);
     graphics.setColor(Color.red);
-    graphics.drawLine(300,0, 300,300);
+    graphics.drawLine(300, 0, 300, 300);
     graphics.setColor(Color.blue);
-    graphics.drawLine(300,300, 0,300);
+    graphics.drawLine(300, 300, 0, 300);
     graphics.setColor(Color.yellow);
-    graphics.drawLine(0,300, 0,0);
+    graphics.drawLine(0, 300, 0, 0);
     graphics.setColor(Color.green);
-    graphics.drawLine(0,0, 300,300);
+    graphics.drawLine(0, 0, 300, 300);
     graphics.drawLine(300, 0, 0, 300);
   }
 

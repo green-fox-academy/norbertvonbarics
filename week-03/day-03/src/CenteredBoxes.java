@@ -4,16 +4,26 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FillWithRectangles {
+public class CenteredBoxes {
 
   public static void mainDraw(Graphics graphics) {
-    // draw four different size and color rectangles.
+    // create a square drawing function that takes 1 parameter:
+    // the square size
+    // and draws a square of that size to the center of the canvas.
+    // draw 3 squares with that function.
+    graphics.setColor(Color.blue);
+    square(graphics, 200);
     graphics.setColor(Color.red);
-    graphics.fillRect(0, 0, 150, 100);
-    graphics.fillRect(200, 0, 50, 140);
-    graphics.fillRect(200, 200, 150, 100);
-    graphics.fillRect(0, 200, 130, 50);
+    square(graphics, 130);
+    graphics.setColor(Color.yellow);
+    square(graphics, 50);
   }
+
+  public static void square(Graphics drawSqure, int size) {
+    int centered = (150 - (size / 2));
+    drawSqure.fillRect(centered, centered, size, size);
+  }
+
 
   //    Don't touch the code below
   public static void main(String[] args) {
