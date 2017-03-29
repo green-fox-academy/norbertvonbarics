@@ -9,19 +9,21 @@ public class SuperHexagon {
   public static void mainDraw(Graphics graphics) {
     // reproduce this:
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/exercises/drawing/super-hexagon/r6.gif]
-    sHexagobon(graphics, 10);
+    sHexagobon(graphics);
   }
 
-  public static void sHexagobon(Graphics hex, int size) {
+  public static void sHexagobon(Graphics hex) {
     int x = 100;
-    int y = 150;
-    //for (int i = 1; i < 15 * size + 1; i++) {
+    int y = 100;
 
-        int xpoints[] = {x, x+20, x+30, x+20, x, x-10, x};
-        int ypoints[] = {x, x, x+20, x+40, x+40, x+20, x};
-        int npoints = 6;
-        hex.drawPolygon(xpoints, ypoints, npoints);
-   // }
+    int npoints = 6;
+    for (int i = 0; i < 6 ; i++) {
+      int xpoints[] = {x, x + 20, x + 30, x + 20, x, x - 10, x};
+      int ypoints[] = {y, y, y + 20, y + 40, y + 40, y + 20, y};
+      hex.drawPolygon(xpoints, ypoints, npoints);
+      y += 40;
+
+    }
   }
 
 
@@ -35,13 +37,13 @@ public class SuperHexagon {
     jFrame.setVisible(true);
   }
 
-static class ImagePanel extends JPanel {
-  @Override
-  protected void paintComponent(Graphics graphics) {
-    super.paintComponent(graphics);
-    mainDraw(graphics);
+  static class ImagePanel extends JPanel {
+    @Override
+    protected void paintComponent(Graphics graphics) {
+      super.paintComponent(graphics);
+      mainDraw(graphics);
 
+    }
   }
-}
 
 }
