@@ -1,25 +1,28 @@
-
 import javax.swing.*;
 
-import java.awt.*;
+        import java.awt.*;
 
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
+        import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LinePlay {
+public class EnvelopeStar {
 
   public static void mainDraw(Graphics graphics) {
     lines(graphics);
   }
 
   public static void lines(Graphics line) {
-    for (int i = 0; i < 300; i += 20) {
+    for (int i = 0; i < 150; i += 10) {
       line.setColor(Color.green);
-      line.drawLine(0, i, 20 + i, 300);
-
-      line.setColor(Color.magenta);
-      line.drawLine(300, 300 - i, 280 - i, 0);
+      line.drawLine(150, i, 150 + i, 150);
+      line.setColor(Color.green);
+      line.drawLine(300 -i,  150, 150, 150 + i);
+      line.setColor(Color.green);
+      line.drawLine(150, 300 -i, 150- i, 150);
+      line.setColor(Color.green);
+      line.drawLine(i, 150, 150, 150-i);
     }
   }
+
 
   //    Don't touch the code below
   public static void main(String[] args) {

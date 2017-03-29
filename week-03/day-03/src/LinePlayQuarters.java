@@ -1,11 +1,12 @@
 
+
 import javax.swing.*;
 
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LinePlay {
+public class LinePlayQuarters {
 
   public static void mainDraw(Graphics graphics) {
     lines(graphics);
@@ -15,11 +16,15 @@ public class LinePlay {
     for (int i = 0; i < 300; i += 20) {
       line.setColor(Color.green);
       line.drawLine(0, i, 20 + i, 300);
-
-      line.setColor(Color.magenta);
+      line.setColor(Color.green);
       line.drawLine(300, 300 - i, 280 - i, 0);
+      line.setColor(Color.green);
+      line.drawLine(300 - i, 0, 0, 20 + i);
+      line.setColor(Color.green);
+      line.drawLine(i, 300, 300, 280 - i);
     }
   }
+
 
   //    Don't touch the code below
   public static void main(String[] args) {
