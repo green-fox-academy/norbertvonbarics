@@ -12,24 +12,27 @@ public class Triangles {
     // - The stars can be small squares
     // - The stars should have random positions on the canvas
     // - The stars should have random color (some shade of grey)
-    int xpoints[] = {150, 138, 162};
-    int ypoints[] = {10, 20, 20};
-    int npoints = 3;
-
-    graphics.drawPolygon(xpoints, ypoints, npoints);
+      triangles(graphics, 15);
   }
-/*
-  public static void Starry(Graphics dots, int numberOfStars) {
-    dots.setColor(Color.black);
-    dots.fillRect(0,0,300,300);
 
-    for (int i = 0; i < numberOfStars; i++) {
-      int randomColor = 115 + (int) Math.ceil(Math.random() * 115);
+  public static void triangles(Graphics triangle, int numTriangles) {
 
+    int x = 16;
+    int y = 150;
+    for (int i = 1; i < 15 * numTriangles + 1; i++) {
+      x = 16 + i * 6;
+      for (int j = 1; j < numTriangles + 1; j++) {
+        int xpoints[] = {x, x - 6, x + 6};
+        int ypoints[] = {y, y + 10, y + 10};
+        int npoints = 3;
+        triangle.drawPolygon(xpoints, ypoints, npoints);
+        x += 12;
 
-      dots.drawLine();
+      }
+      y -= 10;
+      numTriangles--;
     }
-  }*/
+  }
 
   //    Don't touch the code below
   public static void main(String[] args) {
