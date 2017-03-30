@@ -5,7 +5,6 @@ import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class ReproduceThis1 {
-  /*public static int counter = 5;*/
   public static void mainDraw(Graphics graphics) {
     graphics.setColor(Color.yellow);
     graphics.fillRect(0, 0, 486, 486);
