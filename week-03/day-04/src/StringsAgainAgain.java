@@ -10,7 +10,7 @@ public class StringsAgainAgain {
       return text;
     }
     if (len % 2 == 0) {
-      text = "*" + text.substring(1);
+      text = "*" + text;
     }
 
     return text.charAt(0) + xToY(text.substring(1, text.length()),  len -1);
