@@ -1,7 +1,7 @@
 public class Fibonacci {
   public static void main(String[] args) {
-
-    System.out.println(fibonacci(8));
+    int num = 8;
+    System.out.println(fibonacci(num-1));
   }
 
   public static int fibonacci(int num) {
@@ -10,7 +10,7 @@ public class Fibonacci {
     } else if ((num == 1) || (num == 2)) {
       return 1;
     } else {
-      int fibNum = fibonacci(num-1) + fibonacci(num - 2);
+      int fibNum = fibonacci(num - 1) + fibonacci(num - 2);
       return fibNum;
     }
   }
