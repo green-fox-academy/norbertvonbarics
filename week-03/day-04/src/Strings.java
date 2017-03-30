@@ -4,11 +4,14 @@ public class Strings {
     char to = 'y';
     System.out.println(xToY("xxyyxyxxxxyyy", from, to));
   }
-  public static String xToY (String text, char from, char to) {
+
+  public static String xToY(String text, char from, char to) {
     int counter = text.length();
 
     if (counter == 0) {
-      return text; };
+      return text;
+    }
+    ;
     if (text.charAt(0) == from) {
       text = to + text.substring(1);
     }
