@@ -16,7 +16,6 @@ public class Hexa {
   public static void recurse(Graphics hex, int posX, int posY, int width, int height, int counter) {
     int x[] = {posX, posX - width, posX, posX + 2 * width, posX + 3 * width, posX + 2 * width};
     int y[] = {posY, posY - height, posY - 2 * height, posY - 2 * height, posY - height, posY};
-    hex.setColor(Color.red);
     hex.drawPolygon(x, y, 6);
     if (counter > 0) {
       recurse(hex, posX, posY, width / 3, height / 3, counter - 1);
