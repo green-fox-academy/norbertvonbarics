@@ -8,8 +8,8 @@ public class Circle {
   public static void mainDraw(Graphics draw) {
     int posX = 50;
     int posY = 50;
-    int width = 300;
-    int height = 300;
+    int width = 400;
+    int height = 400;
     int counter = 3;
     drawCircle(posX, posY, width, height, draw, counter);
   }
@@ -19,7 +19,7 @@ public class Circle {
     if (counter > 0) {
       drawCircle(posX + width / 4, posY, width / 2, height / 2, draw, counter - 1);
       drawCircle(posX + width/16, posY + width/12*5, width / 2, height / 2, draw, counter - 1);
-      drawCircle(posX + width/4*6, posY + width/12*5, width / 2, height / 2, draw, counter - 1);
+      drawCircle(posX + width* 4/9, posY + width/12*5, width / 2, height / 2, draw, counter - 1);
     }
   }
 
