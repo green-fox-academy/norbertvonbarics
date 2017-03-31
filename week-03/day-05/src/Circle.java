@@ -15,6 +15,7 @@ public class Circle {
   }
 
   public static void drawCircle(int posX, int posY, int width, int height, Graphics draw, int counter) {
+    draw.setColor(Color.blue);
     draw.drawOval(posX, posY, width, height);
     if (counter > 0) {
       drawCircle(posX + width / 4, posY, width / 2, height / 2, draw, counter - 1);
