@@ -7,27 +7,29 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class SierpinskyCarpet {
   public static void mainDraw(Graphics draw) {
-    int posX = 150;
-    int posY = 150;
-    int width = 150;
-    int height = 150;
-    int counter = 16;
-    drawRect(posX, posY, width, height, draw, counter);
+    int posX = 200;
+    int posY = 200;
+    int size = 200;
+    int counter = 6;
+    drawRect(posX, posY, size, size, draw, counter);
   }
 
-  public static void drawRect(int posX, int posY, int width, int height, Graphics draw, int counter) {
-    draw.fillRect(posX, posY, width, height);
+  public static void drawRect(int posX, int posY, int size,int size1, Graphics draw, int counter) {
+    draw.setColor(Color.magenta);
+    draw.fillRect(posX, posY, size, size);
+
     if (counter > 0) {
-      drawRect(posX - width / 3 * 2, posY - width / 3*2, width / 3, height / 3, draw, counter - 1);
-      drawRect(posX + width / 3, posY - width / 3*2, width / 3, height / 3, draw, counter - 1);
-      drawRect(posX + width / 3 * 4, posY - width / 3*2, width / 3, height / 3, draw, counter - 1);
+      draw.fillRect(posX, posY, size/3, size/3);
+      drawRect(posX - size / 3 * 2, posY - size / 3*2, size / 3, size / 3, draw, counter - 1);
+      drawRect(posX + size / 3, posY - size / 3*2, size / 3, size / 3, draw, counter - 1);
+      drawRect(posX + size / 3 * 4, posY - size / 3*2, size / 3, size / 3, draw, counter - 1);
 
-      drawRect(posX - width / 3 * 2, posY + width / 3, width / 3, height / 3, draw, counter - 1);
-      drawRect(posX + width / 3 * 4, posY + width / 3, width / 3, height / 3, draw, counter - 1);
+      drawRect(posX - size / 3 * 2, posY + size / 3, size / 3, size / 3, draw, counter - 1);
+      drawRect(posX + size / 3 * 4, posY + size / 3, size / 3, size / 3, draw, counter - 1);
 
-      drawRect(posX - width / 3 * 2, posY + width / 3 * 4, width / 3, height / 3, draw, counter - 1);
-      drawRect(posX + width / 3, posY + width / 3 * 4, width / 3, height / 3, draw, counter - 1);
-      drawRect(posX + width / 3 * 4, posY + width / 3 * 4, width / 3, height / 3, draw, counter - 1);
+      drawRect(posX - size / 3 * 2, posY + size / 3 * 4, size / 3, size / 3, draw, counter - 1);
+      drawRect(posX + size / 3, posY + size / 3 * 4, size / 3, size / 3, draw, counter - 1);
+      drawRect(posX + size / 3 * 4, posY + size / 3 * 4, size / 3, size / 3, draw, counter - 1);
     }
   }
 
