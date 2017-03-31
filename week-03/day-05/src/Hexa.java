@@ -22,8 +22,8 @@ public class Hexa {
       recurse(hex, posX + 4 * width / 2, posY - width, width / 3, height / 3, counter - 1);
       recurse(hex, posX + 4 * width / 3, posY, width / 3, height / 3, counter - 1);
       recurse(hex, posX - 4 * width / 6, posY - width, width / 3, height / 3, counter - 1);
-      recurse(hex, posX + 4 * width / 3, posY-2*width, width / 3, height / 3, counter - 1);
-      recurse(hex, posX, posY-2*width, width / 3, height / 3, counter - 1);
+      recurse(hex, posX + 4 * width / 3, posY - 2 * width, width / 3, height / 3, counter - 1);
+      recurse(hex, posX, posY - 2 * width, width / 3, height / 3, counter - 1);
     }
   }
 
