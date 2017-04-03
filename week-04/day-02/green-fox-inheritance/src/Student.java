@@ -1,0 +1,26 @@
+
+public class Student extends Person {
+
+  String previousOrganization;
+  int skippedDays;
+  public Student() {
+    this("Jane Doe", 30, "female", "The School of Life");
+  skippedDays = 0;
+  }
+
+  public Student(String name, int age, String gender, String previousOrganization) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.previousOrganization = previousOrganization;
+  }
+
+
+  public void getGoal() {
+    System.out.println("Be a junior software developer.");
+  }
+
+  public void intrudouce(){
+    System.out.println("Hi, I'm " + name + ", a "+ age + " year old "+ gender + " from " + previousOrganization +  " who skipped" + skippedDays + "days from the course already.");
+  }
+}
