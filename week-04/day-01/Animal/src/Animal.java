@@ -29,7 +29,7 @@ public class Animal {
     return thirst--;
   }
 
-  void play() {
+  public void play() {
     hunger++;
     thirst++;
   }
