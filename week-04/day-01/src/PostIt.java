@@ -8,6 +8,7 @@ public class PostIt {
   public PostIt() {
     this(null, "nah", null);
   }
+
   public PostIt(Color backgroundColor, String text, Color textColor) {
     this.backgroundColor = backgroundColor;
     this.text = text;
@@ -21,7 +22,13 @@ public class PostIt {
     post1.backgroundColor = Color.orange;
     post1.text = "Idea'";
     post1.textColor = Color.blue;
-    System.out.println(post1.backgroundColor);
+    printPostIt(post1);
+    printPostIt(post2);
+    printPostIt(post3);
+  }
+
+  public static void printPostIt (PostIt posts) {
+    System.out.println(posts.backgroundColor + posts.text + posts.textColor);
   }
 }
 
