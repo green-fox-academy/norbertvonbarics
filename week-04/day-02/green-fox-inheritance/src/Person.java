@@ -1,8 +1,20 @@
 
 public class Person {
-  String name;
-  int age;
-  String gender;
+  private String name;
+  private int age;
+  private String gender;
+
+  public String getName() {
+    return this.name;
+  }
+
+  public int getAge() {
+    return this.age;
+  }
+
+  public String getGender() {
+    return this.gender;
+  }
 
   public Person() {
     this("Jane Doe", 30, "female");
@@ -14,8 +26,8 @@ public class Person {
     this.gender = gender;
   }
 
-  public void introduce(){
-    System.out.println("Hi, I'm " +  name + ", a " + age + "year old" + gender + ".");
+  public void introduce() {
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + ".");
   }
 
   public void getGoal() {

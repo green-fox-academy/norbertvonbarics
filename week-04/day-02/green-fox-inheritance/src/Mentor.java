@@ -1,9 +1,10 @@
-public class Mentor extends Person{
+public class Mentor extends Person {
 
   String level;
 
-  public Mentor(){
-    this("Jane Doe", 30, "female", "intermediate");
+  public Mentor() {
+    super();
+    this.level = "intermediate";
   }
 
   public Mentor(String name, int age, String gender, String level) {
@@ -11,11 +12,13 @@ public class Mentor extends Person{
     this.level = level;
   }
 
+  @Override
   public void getGoal() {
     System.out.println("Educate brilliant junior software developers.");
   }
 
-  public void introduce(){
-    System.out.println("Hi, I'm" + name + ", a " + age + " year old " + gender + level + " mentor.");
+  @Override
+  public void introduce() {
+    System.out.println("Hi, I'm " + this.getName() + ", a " + this.getAge() + " year old " + this.getGender() + level + " mentor.");
   }
 }
