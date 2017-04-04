@@ -2,10 +2,11 @@
 public class Flower extends Plant {
 
   public Flower() {
-    this(0.0, 10.0, "red");
+    this(0.0, 0.75, "red", 5);
   }
 
-  public Flower(double water, double absorb, String color) {
-    super(water, absorb, color);
+  public Flower(double waterLevel, double absorb, String color, int minWaterLevel) {
+    super(waterLevel, absorb, color, minWaterLevel);
+    this.minWaterLevel = 5;
   }
 }
