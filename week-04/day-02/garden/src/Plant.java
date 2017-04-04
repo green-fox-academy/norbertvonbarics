@@ -1,17 +1,16 @@
 
 public class Plant {
   double waterLevel;
-  double absorb;
   String color;
-  int minWaterLevel;
+  double minWaterLevel;
 
   public Plant() {
-    this(0.0, 10.0, "black", 10);
+    this(0.0, "black");
   }
 
-  public Plant(double water, double absorb, String color, int minWaterLevel) {
-    this.waterLevel = water;
-    this.absorb = absorb;
+  public Plant(double waterLevel, String color) {
+    this.waterLevel = waterLevel;
+    this.color = color;
   }
 
   public double getWaterLevel() {
@@ -19,6 +18,14 @@ public class Plant {
   }
 
   public void addWater (double number) {
-    this.waterLevel *= number;
+    this.waterLevel += number;
+  }
+
+  public double getMinWaterLevel() {
+    return this.minWaterLevel;
+  }
+
+  public String getColor() {
+    return this.color;
   }
 }
