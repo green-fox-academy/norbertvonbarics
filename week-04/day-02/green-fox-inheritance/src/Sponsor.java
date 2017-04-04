@@ -17,7 +17,7 @@ public class Sponsor extends Person {
 
   @Override
   public void introduce() {
-    System.out.println("Hi, I'm " + this.getName() + ", a " + this.getAge() + " year old " + this.getGender() + "who represents " + company + " and hired " + hiredStudents + "students so far.");
+    System.out.println("Hi, I'm " + this.getName() + ", a " + this.getAge() + " year old " + this.getGender() + "who represents " + company + " and hired " + hiredStudents + " students so far.");
   }
 
   public int hire() {
