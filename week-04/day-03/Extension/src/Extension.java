@@ -18,18 +18,19 @@ public class Extension {
   double median(List<Integer> pool) {
     Collections.sort(pool);
     if (pool.size() % 2 != 0) {
-      return (double)pool.get((pool.size() - 1) / 2);
+      return (double) pool.get((pool.size() - 1) / 2);
     } else {
-      return (double)(pool.get(pool.size() / 2) + pool.get(pool.size() / 2 - 1)) / 2;
+      return (double) (pool.get(pool.size() / 2) + pool.get(pool.size() / 2 - 1)) / 2;
     }
   }
 
   boolean isVowel(char c) {
-    return Arrays.asList('a', 'u', 'o', 'e', 'i').contains(c);
+    return Arrays.asList('a', 'u', 'o', 'e', 'i', 'á', 'ú', 'ü', 'ű', 'ö', 'ő', 'é', 'í', 'ó').contains(c);
   }
 
   String translate(String hungarian) {
     String teve = hungarian;
+    String lastLetter = hungarian.substring(hungarian.length() - 1);
     int length = teve.length();
     for (int i = 0; i < length; i++) {
       char c = teve.charAt(i);
@@ -38,6 +39,9 @@ public class Extension {
         i += 2;
         length += 2;
       }
+    }
+    if(isVowel(lastLetter.charAt(0))) {
+      teve += lastLetter + "v" + lastLetter;
     }
     return teve;
   }
