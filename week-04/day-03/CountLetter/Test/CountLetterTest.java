@@ -11,10 +11,10 @@ public class CountLetterTest {
   public void testLetterCounter() throws Exception {
     String letters = "asdf";
     Map <String, Integer> letterMap = new HashMap<>();
-    letterMap.put("a",0);
+    letterMap.put("a",1);
     letterMap.put("s",1);
-    letterMap.put("d",2);
-    letterMap.put("f",3);
+    letterMap.put("d",1);
+    letterMap.put("f",1);
 
     assertEquals(letterMap, test.letterCounter(letters));
   }
