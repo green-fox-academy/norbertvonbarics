@@ -13,8 +13,6 @@ public class SharpieSet {
     this.sharpies.add(sharpie);
   }
 
-
-
   public int counter() {
     int counter = 0;
     for (int i = 0; i < sharpies.size(); i++) {
