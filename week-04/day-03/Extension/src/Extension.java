@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Extension {
@@ -14,12 +15,13 @@ public class Extension {
     } else return c;
   }
 
-  int median(List<Integer> pool) {
-    int sum = 0;
-    for (int i = 0;i < pool.size(); i++){
-      sum += pool.get(i);
+  double median(List<Integer> pool) {
+    Collections.sort(pool);
+    if (pool.size() % 2 != 0) {
+      return (double)pool.get((pool.size() - 1) / 2);
+    } else {
+      return (double)(pool.get(pool.size() / 2) + pool.get(pool.size() / 2 - 1)) / 2;
     }
-    return sum / pool.size();
   }
 
   boolean isVowel(char c) {
