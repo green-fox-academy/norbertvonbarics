@@ -9,6 +9,7 @@ public class FibonacciTest {
   @Test
   public void testFibonacci() throws Exception {
     int num;
-    assertEquals(13, test.fibonacci(7));
+    assertEquals(1, test.fibonacci(1));
+    assertEquals(21, test.fibonacci(8));
   }
 }
