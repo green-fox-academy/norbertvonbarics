@@ -4,7 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
-  int angle;
+  int angle = 0;
   int testBoxX;
   int testBoxY;
   BoardArray myArray = new BoardArray();
@@ -43,8 +43,9 @@ public class Board extends JComponent implements KeyListener {
         }
       }
     }
+    if(angle == 0) {
     PositionedImage startHero = new PositionedImage("./assets/hero-down.png", testBoxX, testBoxY);
-    startHero.draw(graphics);
+    startHero.draw(graphics); }
 
     if (angle == 1) {
       PositionedImage hero = new PositionedImage("./assets/hero-down.png", testBoxX, testBoxY);
@@ -59,8 +60,15 @@ public class Board extends JComponent implements KeyListener {
       PositionedImage hero = new PositionedImage("./assets/hero-left.png", testBoxX, testBoxY);
       hero.draw(graphics);
     }
-    Monster monster = new Monster();
-    monster.paintSkeleton(graphics);
+
+      //Monster monster = new Monster();
+     // monster.paintSkeleton(graphics);
+    PositionedImage skeleton1 = new PositionedImage("./assets/skeleton.png",  648, 144);
+    skeleton1.draw(graphics);
+    PositionedImage skeleton2 = new PositionedImage("./assets/skeleton.png", 648, 216);
+    skeleton2.draw(graphics);
+    PositionedImage skeleton3 = new PositionedImage("./assets/skeleton.png", 216, 648);
+    skeleton3.draw(graphics);
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
@@ -100,8 +108,8 @@ public class Board extends JComponent implements KeyListener {
       for (int i = 0; i < myArray.array2d().length; i++) {
         for (int j = 0; j < myArray.array2d().length; j++) {
           if ((myArray.array2d()[i][j] == 1 && ((testBoxX == i * 72) && (testBoxY == j * 72)))) {
-              testBoxX = currentX;
-              testBoxY = currentY;
+            testBoxX = currentX;
+            testBoxY = currentY;
           }
         }
       }
