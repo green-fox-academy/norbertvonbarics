@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 
 public class Main {
@@ -16,5 +17,8 @@ public class Main {
     frame.addKeyListener(board);
     // Notice (at the top) that we can only do this
     // because this Board class (the type of the board object) is also a KeyListener
+    /*Graphics g = frame.getGraphics();
+    Monster monster = new Monster();
+    monster.paintSkeleton(g);*/
   }
 }

@@ -9,7 +9,7 @@ public class Monster extends Character {
 
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-
+/*
     BoardArray myArray = new BoardArray();
 
     int lower = 0;
@@ -19,6 +19,7 @@ public class Monster extends Character {
     for (int k = 0; k < 3; k++) {
       int rand = (int) (Math.random() * (upper - lower + 1));
       int result = rand - rand % step + lower;
+
       int rand2 = (int) (Math.random() * (upper - lower + 1));
       int result2 = rand2 - rand2 % step + lower;
 
@@ -33,7 +34,14 @@ public class Monster extends Character {
           }
         }
       }
-    }
+    }*/
+
+    PositionedImage skeleton1 = new PositionedImage("./assets/skeleton.png",  648, 144);
+    skeleton1.draw(graphics);
+    PositionedImage skeleton2 = new PositionedImage("./assets/skeleton.png", 144, 432);
+    skeleton2.draw(graphics);
+    PositionedImage skeleton3 = new PositionedImage("./assets/skeleton.png", 216, 648);
+    skeleton3.draw(graphics);
   }
 }
 

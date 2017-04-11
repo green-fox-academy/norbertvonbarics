@@ -4,6 +4,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
+  final String FLOOR = "./assets/floor.png";
+  final String WALL = "./assets/wall.png";
+
   int angle = 0;
   int testBoxX;
   int testBoxY;
@@ -33,42 +36,25 @@ public class Board extends JComponent implements KeyListener {
         if (myArray.array2d()[i][j] == 1) {
           posX = i * 72;
           posY = j * 72;
-          PositionedImage wall = new PositionedImage("./assets/wall.png", posX, posY);
+          PositionedImage wall = new PositionedImage(WALL, posX, posY);
           wall.draw(graphics);
         } else {
           posX = i * 72;
           posY = j * 72;
-          PositionedImage image = new PositionedImage("./assets/floor.png", posX, posY);
+          PositionedImage image = new PositionedImage(FLOOR, posX, posY);
           image.draw(graphics);
         }
       }
     }
-    if(angle == 0) {
-    PositionedImage startHero = new PositionedImage("./assets/hero-down.png", testBoxX, testBoxY);
-    startHero.draw(graphics); }
 
-    if (angle == 1) {
-      PositionedImage hero = new PositionedImage("./assets/hero-down.png", testBoxX, testBoxY);
-      hero.draw(graphics);
-    } else if (angle == 2) {
-      PositionedImage hero = new PositionedImage("./assets/hero-up.png", testBoxX, testBoxY);
-      hero.draw(graphics);
-    } else if (angle == 3) {
-      PositionedImage hero = new PositionedImage("./assets/hero-right.png", testBoxX, testBoxY);
-      hero.draw(graphics);
-    } else if (angle == 4) {
-      PositionedImage hero = new PositionedImage("./assets/hero-left.png", testBoxX, testBoxY);
-      hero.draw(graphics);
-    }
+    Hero hero = new Hero();
+    hero.paintHero(graphics, angle, testBoxX, testBoxY);
 
-      //Monster monster = new Monster();
-     // monster.paintSkeleton(graphics);
-    PositionedImage skeleton1 = new PositionedImage("./assets/skeleton.png",  648, 144);
-    skeleton1.draw(graphics);
-    PositionedImage skeleton2 = new PositionedImage("./assets/skeleton.png", 648, 216);
-    skeleton2.draw(graphics);
-    PositionedImage skeleton3 = new PositionedImage("./assets/skeleton.png", 216, 648);
-    skeleton3.draw(graphics);
+    Monster monster = new Monster();
+    monster.paintSkeleton(graphics);
+
+    Boss boss = new Boss();
+    boss.paintBoss(graphics);
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
