@@ -23,7 +23,7 @@ public class Board extends JComponent implements KeyListener {
     graphics.fillRect(testBoxX, testBoxY, 100, 100);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-    PositionedImage image = new PositionedImage("hero.png", 300, 300);
+    PositionedImage image = new PositionedImage("yourimage.png", 300, 300);
     image.draw(graphics);
   }
 
@@ -46,6 +46,10 @@ public class Board extends JComponent implements KeyListener {
       testBoxY -= 100;
     } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
       testBoxY += 100;
+    } else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+      testBoxX += 100;
+    } else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+      testBoxX -= 100;
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
