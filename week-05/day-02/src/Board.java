@@ -7,19 +7,7 @@ public class Board extends JComponent implements KeyListener {
   int angle;
   int testBoxX;
   int testBoxY;
-
-  int[][] multi = new int[][]{
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-          {1, 1, 0, 1, 1, 0, 1, 1, 1, 0},
-          {1, 1, 0, 1, 0, 0, 0, 0, 0, 0},
-          {0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
-          {1, 1, 1, 1, 0, 1, 1, 0, 1, 1},
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-          {1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
-          {0, 0, 1, 1, 0, 0, 0, 1, 0, 0},
-          {0, 0, 1, 1, 1, 1, 0, 1, 0, 1},
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-  };
+  BoardArray myArray = new BoardArray();
 
   public Board() {
     testBoxX = 0;
@@ -40,9 +28,9 @@ public class Board extends JComponent implements KeyListener {
     int posX = 0;
     int posY = 0;
 
-    for (int i = 0; i < multi.length; i++) {
-      for (int j = 0; j < multi.length; j++) {
-        if (multi[i][j] == 1) {
+    for (int i = 0; i < myArray.array2d().length; i++) {
+      for (int j = 0; j < myArray.array2d().length; j++) {
+        if (myArray.array2d()[i][j] == 1) {
           posX = i * 72;
           posY = j * 72;
           PositionedImage wall = new PositionedImage("./assets/wall.png", posX, posY);
@@ -71,6 +59,8 @@ public class Board extends JComponent implements KeyListener {
       PositionedImage hero = new PositionedImage("./assets/hero-left.png", testBoxX, testBoxY);
       hero.draw(graphics);
     }
+    Monster monster = new Monster();
+    monster.paintSkeleton(graphics);
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
@@ -107,16 +97,14 @@ public class Board extends JComponent implements KeyListener {
         angle = 4;
       }
 
-      for (int i = 0; i < multi.length; i++) {
-        for (int j = 0; j < multi.length; j++) {
-          if ((multi[i][j] == 1 && ((testBoxX == i * 72) && (testBoxY == j * 72)))) {
+      for (int i = 0; i < myArray.array2d().length; i++) {
+        for (int j = 0; j < myArray.array2d().length; j++) {
+          if ((myArray.array2d()[i][j] == 1 && ((testBoxX == i * 72) && (testBoxY == j * 72)))) {
               testBoxX = currentX;
               testBoxY = currentY;
           }
         }
       }
-
-
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
