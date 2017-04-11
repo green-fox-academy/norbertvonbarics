@@ -8,6 +8,19 @@ public class Board extends JComponent implements KeyListener {
   int testBoxX;
   int testBoxY;
 
+  int[][] multi = new int[][]{
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+          {1, 1, 0, 1, 1, 0, 1, 1, 1, 0},
+          {1, 1, 0, 1, 0, 0, 0, 0, 0, 0},
+          {0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
+          {1, 1, 1, 1, 0, 1, 1, 0, 1, 1},
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+          {1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
+          {0, 0, 1, 1, 0, 0, 0, 1, 0, 0},
+          {0, 0, 1, 1, 1, 1, 0, 1, 0, 1},
+          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+  };
+
   public Board() {
     testBoxX = 0;
     testBoxY = 0;
@@ -23,19 +36,6 @@ public class Board extends JComponent implements KeyListener {
 
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-
-    int[][] multi = new int[][]{
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {1, 1, 0, 1, 1, 0, 1, 1, 1, 0},
-            {1, 1, 0, 1, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
-            {1, 1, 1, 1, 0, 1, 1, 0, 1, 1},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
-            {0, 0, 1, 1, 0, 0, 0, 1, 0, 0},
-            {0, 0, 1, 1, 1, 1, 0, 1, 0, 1},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    };
 
     int posX = 0;
     int posY = 0;
@@ -88,20 +88,35 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
+
+    int currentX = testBoxX;
+    int currentY = testBoxY;
+
     if (testBoxX >= 0 && testBoxX <= 648) {
-      if (e.getKeyCode() == KeyEvent.VK_UP) {
+      if ((e.getKeyCode() == KeyEvent.VK_UP) && (testBoxY >= 72)) {
         testBoxY -= 72;
         angle = 2;
-      } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+      } else if ((e.getKeyCode() == KeyEvent.VK_DOWN) && (testBoxY <= 576)) {
         testBoxY += 72;
         angle = 1;
-      } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+      } else if ((e.getKeyCode() == KeyEvent.VK_RIGHT) && (testBoxX <= 576)) {
         testBoxX += 72;
         angle = 3;
-      } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+      } else if ((e.getKeyCode() == KeyEvent.VK_LEFT) && (testBoxX >= 72)) {
         testBoxX -= 72;
         angle = 4;
       }
+
+      for (int i = 0; i < multi.length; i++) {
+        for (int j = 0; j < multi.length; j++) {
+          if ((multi[i][j] == 1 && ((testBoxX == i * 72) && (testBoxY == j * 72)))) {
+              testBoxX = currentX;
+              testBoxY = currentY;
+          }
+        }
+      }
+
+
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
