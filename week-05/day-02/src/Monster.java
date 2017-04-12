@@ -5,11 +5,12 @@ public class Monster extends Character {
 
   int[] posX = new int[]{0, 0, 0};
   int[] posY = new int[]{0, 0, 0};
+
   public void paintSkeleton(Graphics graphics) {
 
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-/*
+
     BoardArray myArray = new BoardArray();
 
     int lower = 0;
@@ -26,22 +27,23 @@ public class Monster extends Character {
       posX[k] = (result);
       posY[k] = (result2);
 
-      for (int i = 0; i < myArray.array2d().length; i++) {
-        for (int j = 0; j < myArray.array2d().length; j++) {
-          if (myArray.array2d()[posX[k]/72][posY[k]/72] != 1)  {
-            PositionedImage skeleton1 = new PositionedImage("./assets/skeleton.png", posX[k], posY[k]);
-            skeleton1.draw(graphics);
-          }
+    for (int i = 0; i < myArray.array2d().length; i++) {
+      for (int j = 0; j < myArray.array2d().length; j++) {
+        if (myArray.array2d()[posX[k] / 72][posY[k] / 72] != 1) {
+          PositionedImage skeleton1 = new PositionedImage("./assets/skeleton.png", posX[k], posY[k]);
+          skeleton1.draw(graphics);
         }
       }
-    }*/
+    }
+  }
 
+/*
     PositionedImage skeleton1 = new PositionedImage("./assets/skeleton.png",  648, 144);
     skeleton1.draw(graphics);
     PositionedImage skeleton2 = new PositionedImage("./assets/skeleton.png", 144, 432);
     skeleton2.draw(graphics);
     PositionedImage skeleton3 = new PositionedImage("./assets/skeleton.png", 216, 648);
-    skeleton3.draw(graphics);
+    skeleton3.draw(graphics);*/
   }
 }
 

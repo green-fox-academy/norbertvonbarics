@@ -1,3 +1,5 @@
+import javazoom.jl.player.Player;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -77,18 +79,23 @@ public class Board extends JComponent implements KeyListener {
     int currentY = testBoxY;
 
     if (testBoxX >= 0 && testBoxX <= 648) {
+      Sounds testPlay = new Sounds();
       if ((e.getKeyCode() == KeyEvent.VK_UP) && (testBoxY >= 72)) {
         testBoxY -= 72;
         angle = 2;
+        testPlay.playmp3();
       } else if ((e.getKeyCode() == KeyEvent.VK_DOWN) && (testBoxY <= 576)) {
         testBoxY += 72;
         angle = 1;
+        testPlay.playmp3();
       } else if ((e.getKeyCode() == KeyEvent.VK_RIGHT) && (testBoxX <= 576)) {
         testBoxX += 72;
         angle = 3;
+        testPlay.playmp3();
       } else if ((e.getKeyCode() == KeyEvent.VK_LEFT) && (testBoxX >= 72)) {
         testBoxX -= 72;
         angle = 4;
+        testPlay.playmp3();
       }
 
       for (int i = 0; i < myArray.array2d().length; i++) {
