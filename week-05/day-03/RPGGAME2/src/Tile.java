@@ -10,9 +10,9 @@ public class Tile extends GameObject {
     super(posX, posY);
     this.wall = wall;
     if (wall) {
-      super.costume = "./assets/wall.png";
+      super.costume = "./assets/doom/wall.png";
     } else {
-      super.costume = "./assets/floor.png";
+      super.costume = "./assets/doom/floor.png";
     }
   }
 }

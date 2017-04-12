@@ -8,6 +8,7 @@ import java.util.List;
 public class GameEngine extends JComponent implements KeyListener {
   Hero newHero = new Hero();
   Monster newMonster = new Monster();
+  Boss newBoss = new Boss();
   Board myArray = new Board();
 
   List<Tile> newTileList = new ArrayList<>();
@@ -36,15 +37,17 @@ public class GameEngine extends JComponent implements KeyListener {
     PositionedImage startHero = new PositionedImage(newHero.costume, newHero.posX * 72, newHero.posY * 72);
     startHero.draw(graphics);
 
-    PositionedImage skeleton = new PositionedImage(newMonster.costume, newMonster.posX * 72, newMonster.posY * 72);
-    if(myArray.ifThereIsWall(newMonster.posX, newMonster.posY)) {
-      skeleton.draw(graphics);
-    } else {
-      newMonster.posX = newMonster.randomNumber();
-      newMonster.posY = newMonster.randomNumber();
-      skeleton.draw(graphics);
-    }
+    PositionedImage skeleton = new PositionedImage(newMonster.costume, newMonster.posXArray[0] * 72, newMonster.posYArray[0] * 72);
+    skeleton.draw(graphics);
+    PositionedImage skeleton2 = new PositionedImage(newMonster.costume, newMonster.posXArray[1] * 72, newMonster.posYArray[1] * 72);
+    skeleton2.draw(graphics);
+    PositionedImage skeleton3 = new PositionedImage(newMonster.costume, newMonster.posXArray[2] * 72, newMonster.posYArray[2] * 72);
+    skeleton3.draw(graphics);
+
+    PositionedImage boss = new PositionedImage(newBoss.costume, newBoss.posX * 72, newBoss.posY * 72);
+    boss.draw(graphics);
   }
+
 
   @Override
   public void keyTyped(KeyEvent e) {

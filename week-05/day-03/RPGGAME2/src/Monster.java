@@ -1,16 +1,32 @@
 
 public class Monster extends Character {
+  int random;
+
   public Monster(int posX, int posY, String costume) {
     super(posX, posY);
   }
 
+  Board myArray = new Board();
+  int[] posXArray = new int[]{0, 0, 0};
+  int[] posYArray = new int[]{0, 0, 0};
+
   public Monster() {
-    this.posX = randomNumber();
-    this.posY = randomNumber();
-    this.costume = "./assets/skeleton.png";
+    this.costume = "./assets/doom/zombie.png";
+    for (int i = 0; i < 3; i++) {
+
+    posX = (int) (Math.random() * 10);
+    posY = (int) (Math.random() * 10);
+    while (!myArray.ifThereIsWall(posX, posY)) {
+      posX = (int) (Math.random() * 10);
+      posY = (int) (Math.random() * 10);
+    }
+    posXArray[i] = posX;
+    posYArray[i] = posY;
   }
 
-  public int randomNumber (){
-    return posX = (int) (Math.random() * 10);
+}
+
+  public int randomNumber() {
+    return random = (int) (Math.random() * 10);
   }
 }
