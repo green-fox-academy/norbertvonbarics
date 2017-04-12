@@ -6,21 +6,9 @@ import java.util.*;
 import java.util.List;
 
 public class GameEngine extends JComponent implements KeyListener {
-
-  int[][] multi = new int[][]{
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-          {1, 1, 0, 1, 1, 0, 1, 1, 1, 0},
-          {1, 1, 0, 1, 0, 0, 0, 0, 0, 0},
-          {0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
-          {1, 1, 1, 1, 0, 1, 1, 0, 1, 1},
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-          {1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
-          {0, 0, 1, 1, 0, 0, 0, 1, 0, 0},
-          {0, 0, 1, 1, 1, 1, 0, 1, 0, 1},
-          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-  };
-
   Hero newHero = new Hero();
+  Monster newMonster = new Monster();
+  Board myArray = new Board();
 
   List<Tile> newTileList = new ArrayList<>();
 
@@ -28,9 +16,9 @@ public class GameEngine extends JComponent implements KeyListener {
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
 
-    for (int i = 0; i < multi.length; i++) {
-      for (int j = 0; j < multi.length; j++) {
-        Tile newTile = new Tile(i * 72, j * 72, multi[i][j] == 1);
+    for (int i = 0; i < myArray.array2d().length; i++) {
+      for (int j = 0; j < myArray.array2d().length; j++) {
+        Tile newTile = new Tile(i * 72, j * 72, myArray.array2d()[i][j] == 1);
         newTileList.add(newTile);
       }
     }
@@ -45,19 +33,25 @@ public class GameEngine extends JComponent implements KeyListener {
       wall.draw(graphics);
     }
 
-    PositionedImage startHero = new PositionedImage(newHero.costume, newHero.posX*72, newHero.posY*72);
+    PositionedImage startHero = new PositionedImage(newHero.costume, newHero.posX * 72, newHero.posY * 72);
     startHero.draw(graphics);
 
+    PositionedImage skeleton = new PositionedImage(newMonster.costume, newMonster.posX * 72, newMonster.posY * 72);
+    if(myArray.ifThereIsWall(newMonster.posX, newMonster.posY)) {
+      skeleton.draw(graphics);
+    } else {
+      newMonster.posX = newMonster.randomNumber();
+      newMonster.posY = newMonster.randomNumber();
+      skeleton.draw(graphics);
+    }
   }
 
   @Override
   public void keyTyped(KeyEvent e) {
-
   }
 
   @Override
   public void keyPressed(KeyEvent e) {
-
   }
 
   @Override

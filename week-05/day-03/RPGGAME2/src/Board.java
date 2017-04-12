@@ -1,5 +1,5 @@
 public class Board {
-  public int[][] array2d () {
+  public int[][] array2d() {
     int[][] multi = new int[][]{
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {1, 1, 0, 1, 1, 0, 1, 1, 1, 0},
@@ -13,5 +13,9 @@ public class Board {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     };
     return multi;
+  }
+
+  boolean ifThereIsWall(int posX, int posY) {
+    return (array2d()[posX][posY] != 1);
   }
 }
