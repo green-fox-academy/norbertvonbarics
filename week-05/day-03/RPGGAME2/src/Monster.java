@@ -14,19 +14,14 @@ public class Monster extends Character {
     this.costume = "./assets/doom/zombie.png";
     for (int i = 0; i < 3; i++) {
 
-    posX = (int) (Math.random() * 10);
-    posY = (int) (Math.random() * 10);
-    while (!myArray.ifThereIsWall(posX, posY)) {
       posX = (int) (Math.random() * 10);
       posY = (int) (Math.random() * 10);
+      while (!myArray.ifThereIsWall(posX, posY)) {
+        posX = (int) (Math.random() * 10);
+        posY = (int) (Math.random() * 10);
+      }
+      posXArray[i] = posX;
+      posYArray[i] = posY;
     }
-    posXArray[i] = posX;
-    posYArray[i] = posY;
-  }
-
-}
-
-  public int randomNumber() {
-    return random = (int) (Math.random() * 10);
   }
 }

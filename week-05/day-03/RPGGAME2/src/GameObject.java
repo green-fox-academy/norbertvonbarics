@@ -5,7 +5,7 @@ public class GameObject {
   String costume;
 
   public GameObject() {
-    this(0, 0, "./assets/skeleton.png");
+    this(0, 0, "./assets/doom/doom-down.png");
   }
 
   public GameObject(int posX, int posY, String costume) {

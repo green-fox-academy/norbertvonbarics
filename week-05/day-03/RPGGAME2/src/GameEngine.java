@@ -61,12 +61,16 @@ public class GameEngine extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       newHero.heroMoveUp();
+      newMonster.monsterMove(newMonster.posXArray[0], newMonster.posYArray[0]);
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       newHero.heroMoveDown();
+      newMonster.monsterMove(newMonster.posXArray[0], newMonster.posYArray[0]);
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       newHero.heroMoveLeft();
+      newMonster.monsterMove(newMonster.posXArray[0], newMonster.posYArray[0]);
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       newHero.heroMoveRight();
+      newMonster.monsterMove(newMonster.posXArray[0], newMonster.posYArray[0]);
     }
     repaint();
   }

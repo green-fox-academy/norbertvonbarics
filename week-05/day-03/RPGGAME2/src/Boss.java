@@ -1,13 +1,13 @@
 
 public class Boss extends Character {
-  public Boss(int posX, int posY, String costume) {
+  public Boss(int posX, int posY) {
     super(posX, posY);
   }
 
   Board myArray = new Board();
   int random;
 
-  public Boss() {
+  Boss() {
     this.costume = "./assets/doom/mechademon.png";
 
     posX = (int) (Math.random() * 10);
