@@ -45,7 +45,7 @@ public class GameEngine extends JComponent implements KeyListener {
       wall.draw(graphics);
     }
 
-    PositionedImage startHero = new PositionedImage(newHero.costume, newHero.posX, newHero.posY);
+    PositionedImage startHero = new PositionedImage(newHero.costume, newHero.posX*72, newHero.posY*72);
     startHero.draw(graphics);
 
   }

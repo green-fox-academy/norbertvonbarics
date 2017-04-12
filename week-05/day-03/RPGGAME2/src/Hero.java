@@ -13,8 +13,8 @@ public class Hero extends Character {
 
   void heroMoveUp() {
     super.costume = "./assets/hero-up.png";
-    if (posY >= 72) {
-      posY -= 72;
+    if (ifThereIsWall(posX, posY - 1)&& posY >= 1){
+      posY -= 1;
     }
 
   }
@@ -22,32 +22,27 @@ public class Hero extends Character {
   void heroMoveDown() {
     super.costume = "./assets/hero-down.png";
     //isThereIsAWall((posY + 72));
-    if (isThereIsAWall(posY + 72) && posY <= 576) {
-      posY += 72;
+    if (ifThereIsWall(posX, posY  + 1) && posY <= 8) {
+      posY += 1;
     }
 
   }
 
   void heroMoveRight() {
     super.costume = "./assets/hero-right.png";
-    if (posX <= 576) {
-      posX += 72;
+    if (ifThereIsWall(posX + 1, posY) && posX <= 8) {
+      posX += 1;
     }
   }
 
   void heroMoveLeft() {
     super.costume = "./assets/hero-left.png";
-    if (posX >= 72) {
-      posX -= 72;
+    if (ifThereIsWall(posX - 1, posY) && posX >= 1) {
+      posX -= 1;
     }
   }
 
-  private boolean isThereIsAWall(int pos) {
-    for (int i = 0; i < myArray.array2d().length; i++) {
-      for (int j = 0; j < myArray.array2d().length; j++) {
-        return ((myArray.array2d()[i][j] == 1 && ((posX == i * 72) && (posY == j * 72))));
-      }
-    }
-    return false;
+  private boolean ifThereIsWall(int posX, int posY) {
+    return (myArray.array2d()[posX][posY] != 1);
   }
 }
