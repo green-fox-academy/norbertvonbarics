@@ -7,7 +7,9 @@ import java.util.List;
 
 public class GameEngine extends JComponent implements KeyListener {
   Hero newHero = new Hero();
-  Monster newMonster = new Monster();
+  Monster newMonster1 = new Monster();
+  Monster newMonster2 = new Monster();
+  Monster newMonster3 = new Monster();
   Boss newBoss = new Boss();
   Board myArray = new Board();
 
@@ -37,13 +39,12 @@ public class GameEngine extends JComponent implements KeyListener {
     PositionedImage startHero = new PositionedImage(newHero.costume, newHero.posX * 72, newHero.posY * 72);
     startHero.draw(graphics);
 
-    PositionedImage skeleton = new PositionedImage(newMonster.costume, newMonster.posXArray[0] * 72, newMonster.posYArray[0] * 72);
+    PositionedImage skeleton = new PositionedImage(newMonster1.costume, newMonster1.posX * 72, newMonster1.posY * 72);
     skeleton.draw(graphics);
-    PositionedImage skeleton2 = new PositionedImage(newMonster.costume, newMonster.posXArray[1] * 72, newMonster.posYArray[1] * 72);
+    PositionedImage skeleton2 = new PositionedImage(newMonster2.costume, newMonster2.posX * 72, newMonster2.posY * 72);
     skeleton2.draw(graphics);
-    PositionedImage skeleton3 = new PositionedImage(newMonster.costume, newMonster.posXArray[2] * 72, newMonster.posYArray[2] * 72);
+    PositionedImage skeleton3 = new PositionedImage(newMonster3.costume, newMonster3.posX * 72, newMonster3.posY * 72);
     skeleton3.draw(graphics);
-
     PositionedImage boss = new PositionedImage(newBoss.costume, newBoss.posX * 72, newBoss.posY * 72);
     boss.draw(graphics);
   }
@@ -59,18 +60,18 @@ public class GameEngine extends JComponent implements KeyListener {
 
   @Override
   public void keyReleased(KeyEvent e) {
+    newBoss.characterMove();
+    newMonster1.characterMove();
+    newMonster2.characterMove();
+    newMonster3.characterMove();
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       newHero.heroMoveUp();
-      newMonster.monsterMove(newMonster.posXArray[0], newMonster.posYArray[0]);
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       newHero.heroMoveDown();
-      newMonster.monsterMove(newMonster.posXArray[0], newMonster.posYArray[0]);
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       newHero.heroMoveLeft();
-      newMonster.monsterMove(newMonster.posXArray[0], newMonster.posYArray[0]);
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       newHero.heroMoveRight();
-      newMonster.monsterMove(newMonster.posXArray[0], newMonster.posYArray[0]);
     }
     repaint();
   }

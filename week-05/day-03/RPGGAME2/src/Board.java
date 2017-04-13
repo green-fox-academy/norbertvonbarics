@@ -15,7 +15,7 @@ public class Board {
     return multi;
   }
 
-  boolean ifThereIsWall(int posX, int posY) {
+  boolean IsWall(int posX, int posY) {
     return (array2d()[posX][posY] != 1);
   }
 }

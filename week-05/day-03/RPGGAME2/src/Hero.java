@@ -13,14 +13,14 @@ public class Hero extends Character {
 
   void heroMoveUp() {
     super.costume = "./assets/doom/doom-up.png";
-    if (myArray.ifThereIsWall(posX, posY - 1) && posY >= 1) {
+    if ((myArray.IsWall(posX, posY - 1)) && (posY > 0)) {
       posY -= 1;
     }
   }
 
   void heroMoveDown() {
     super.costume = "./assets/doom/doom-down.png";
-    if (myArray.ifThereIsWall(posX, posY + 1) && posY <= 8) {
+    if ((myArray.IsWall(posX, posY + 1)) && (posY < 9)) {
       posY += 1;
     }
 
@@ -28,14 +28,14 @@ public class Hero extends Character {
 
   void heroMoveRight() {
     super.costume = "./assets/doom/doom-right.png";
-    if (myArray.ifThereIsWall(posX + 1, posY) && posX <= 8) {
+    if ((myArray.IsWall(posX + 1, posY)) && (posX < 9)) {
       posX += 1;
     }
   }
 
   void heroMoveLeft() {
     super.costume = "./assets/doom/doom-left.png";
-    if (myArray.ifThereIsWall(posX - 1, posY) && posX >= 1) {
+    if ((myArray.IsWall(posX - 1, posY)) && (posX > 0)) {
       posX -= 1;
     }
   }

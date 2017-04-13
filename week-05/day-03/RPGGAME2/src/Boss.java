@@ -12,7 +12,7 @@ public class Boss extends Character {
 
     posX = (int) (Math.random() * 10);
     posY = (int) (Math.random() * 10);
-    while (!myArray.ifThereIsWall(posX, posY)){
+    while (!myArray.IsWall(posX, posY)){
       posX = (int) (Math.random() * 10);
       posY = (int) (Math.random() * 10);
     }

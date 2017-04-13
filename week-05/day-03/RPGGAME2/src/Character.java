@@ -24,22 +24,22 @@ public class Character extends GameObject {
 
   }
 
-  void monsterMove(int posX, int posY) {
+  void characterMove() {
     int random = (int) (Math.random() * 4);
-    if (random == 0) {
-      if (myArray.ifThereIsWall(posX + 1, posY) && posX <= 8) {
+    if ((random == 0) && (posX < 9)){
+      if (myArray.IsWall(posX + 1, posY)) {
         posX += 1;
       }
-    } else if (random == 1) {
-      if (myArray.ifThereIsWall(posX - 1, posY) && posX <= 1) {
+    } else if ((random == 1) && (posX > 0)) {
+      if (myArray.IsWall(posX - 1, posY)) {
         posX -= 1;
       }
-    } else if (random == 2) {
-      if (myArray.ifThereIsWall(posX, posY + 1) && posX <= 8) {
+    } else if ((random == 2) && (posY < 9)) {
+      if (myArray.IsWall(posX, posY + 1)) {
         posY += 1;
       }
-    } else if (random == 3) {
-      if (myArray.ifThereIsWall(posX, posY - 1) && posX <= 1) {
+    } else if ((random == 3) && (posY > 0)) {
+      if (myArray.IsWall(posX, posY - 1)) {
         posY -= 1;
       }
     }

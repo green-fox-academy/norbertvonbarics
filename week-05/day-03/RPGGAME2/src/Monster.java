@@ -7,8 +7,8 @@ public class Monster extends Character {
   }
 
   Board myArray = new Board();
-  int[] posXArray = new int[]{0, 0, 0};
-  int[] posYArray = new int[]{0, 0, 0};
+
+
 
   public Monster() {
     this.costume = "./assets/doom/zombie.png";
@@ -16,12 +16,10 @@ public class Monster extends Character {
 
       posX = (int) (Math.random() * 10);
       posY = (int) (Math.random() * 10);
-      while (!myArray.ifThereIsWall(posX, posY)) {
+      while (!myArray.IsWall(posX, posY)) {
         posX = (int) (Math.random() * 10);
         posY = (int) (Math.random() * 10);
       }
-      posXArray[i] = posX;
-      posYArray[i] = posY;
     }
   }
 }
