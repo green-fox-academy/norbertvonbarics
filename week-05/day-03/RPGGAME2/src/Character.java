@@ -26,7 +26,7 @@ public class Character extends GameObject {
 
   void characterMove() {
     int random = (int) (Math.random() * 4);
-    if ((random == 0) && (posX < 9)){
+    if ((random == 0) && (posX < 9)) {
       if (myArray.IsWall(posX + 1, posY)) {
         posX += 1;
       }
@@ -43,5 +43,9 @@ public class Character extends GameObject {
         posY -= 1;
       }
     }
+  }
+
+  int dice() {
+    return (int) Math.ceil(Math.random() * 6);
   }
 }

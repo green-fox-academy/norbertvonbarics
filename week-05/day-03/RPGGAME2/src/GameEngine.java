@@ -12,6 +12,7 @@ public class GameEngine extends JComponent implements KeyListener {
   Monster newMonster3 = new Monster();
   Boss newBoss = new Boss();
   Board myArray = new Board();
+  int counter = 1;
 
   List<Tile> newTileList = new ArrayList<>();
 
@@ -25,6 +26,7 @@ public class GameEngine extends JComponent implements KeyListener {
         newTileList.add(newTile);
       }
     }
+    System.out.println(newHero.hp);
   }
 
   @Override
@@ -60,14 +62,20 @@ public class GameEngine extends JComponent implements KeyListener {
 
   @Override
   public void keyReleased(KeyEvent e) {
-    newBoss.characterMove();
-    newMonster1.characterMove();
-    newMonster2.characterMove();
-    newMonster3.characterMove();
+    if (counter == 0) {
+      newBoss.characterMove();
+      newMonster1.characterMove();
+      newMonster2.characterMove();
+      newMonster3.characterMove();
+      counter++;
+    } else {
+      counter--;
+    }
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       newHero.heroMoveUp();
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      newHero.heroMoveDown();
+      newHero.heroMoveDown
+              ();
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       newHero.heroMoveLeft();
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
