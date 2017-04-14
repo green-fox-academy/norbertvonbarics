@@ -63,15 +63,21 @@ public class GameEngine extends JComponent implements KeyListener {
 
   @Override
   public void keyReleased(KeyEvent e) {
-    if (counter == 0) {
-      newBoss.characterMove();
-      newMonster1.characterMove();
-      newMonster2.characterMove();
-      newMonster3.characterMove();
-      counter++;
-    } else {
-      counter--;
-    }
+      try {
+        Robot johnny5 = new Robot();
+
+        johnny5.keyPress(KeyEvent.VK_X);
+        johnny5.keyRelease(KeyEvent.VK_X);
+      } catch  (AWTException ex) {
+        System.out.println("JOHNNY 5 ERROR");
+        ex.printStackTrace();
+      }
+      if (e.getKeyCode() == KeyEvent.VK_X) {
+        newBoss.characterMove();
+        newMonster1.characterMove();
+        newMonster2.characterMove();
+        newMonster3.characterMove();
+      }
 
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       newHero.heroMoveUp();

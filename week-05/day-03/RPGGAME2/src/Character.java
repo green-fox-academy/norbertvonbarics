@@ -21,7 +21,6 @@ public class Character extends GameObject {
   }
 
   Character() {
-
   }
 
   void characterMove() {
