@@ -2,7 +2,7 @@
 
 public class Hero extends Character {
   private Board myArray = new Board();
-  private int hpVol3 = 0;
+
 
   public Hero(int posX, int posY, int hp, int dp, int sp) {
     super(posX, posY);
@@ -14,6 +14,7 @@ public class Hero extends Character {
 
 
   Hero() {
+    int hpVol3 = 0;
     for (int i = 0; i < 3; i++) {
       hpVol3 += dice();
     }

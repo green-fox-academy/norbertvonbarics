@@ -6,17 +6,18 @@ import java.util.*;
 import java.util.List;
 
 public class GameEngine extends JComponent implements KeyListener {
-  Hero newHero = new Hero();
-  Monster newMonster1 = new Monster();
-  Monster newMonster2 = new Monster();
-  Monster newMonster3 = new Monster();
-  Boss newBoss = new Boss();
-  Board myArray = new Board();
-  int counter = 1;
+  private Hero newHero = new Hero();
+  private Monster newMonster1 = new Monster();
+  private Monster newMonster2 = new Monster();
+  private Monster newMonster3 = new Monster();
+  private Boss newBoss = new Boss();
+  private Board myArray = new Board();
 
-  List<Tile> newTileList = new ArrayList<>();
+  private int counter = 1;
 
-  public GameEngine() {
+  private List<Tile> newTileList = new ArrayList<>();
+
+  GameEngine() {
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
 
@@ -71,15 +72,17 @@ public class GameEngine extends JComponent implements KeyListener {
     } else {
       counter--;
     }
+
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       newHero.heroMoveUp();
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      newHero.heroMoveDown
-              ();
+      newHero.heroMoveDown();
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       newHero.heroMoveLeft();
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       newHero.heroMoveRight();
+    } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+      //attack method
     }
     repaint();
   }
