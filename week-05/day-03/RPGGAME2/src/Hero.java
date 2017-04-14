@@ -1,23 +1,23 @@
 
 
 public class Hero extends Character {
-  Board myArray = new Board();
+  private Board myArray = new Board();
   private int hpVol3 = 0;
+
   public Hero(int posX, int posY, int hp, int dp, int sp) {
     super(posX, posY);
 
-    for (int i = 0; i < 3; i++) {
-      hpVol3 += dice();
-    }
-    this.hp = 20 + hpVol3;
+    this.hp = hp;
     this.dp = dp;
     this.sp = sp;
   }
 
 
-
   Hero() {
-    super();
+    for (int i = 0; i < 3; i++) {
+      hpVol3 += dice();
+    }
+    this.hp = hpVol3 + 20;
   }
 
   void heroMoveUp() {
