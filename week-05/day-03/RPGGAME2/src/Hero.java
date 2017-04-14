@@ -3,7 +3,6 @@
 public class Hero extends Character {
   private Board myArray = new Board();
 
-
   public Hero(int posX, int posY, int hp, int dp, int sp) {
     super(posX, posY);
 
