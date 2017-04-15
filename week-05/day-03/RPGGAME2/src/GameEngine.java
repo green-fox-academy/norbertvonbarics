@@ -51,12 +51,12 @@ public class GameEngine extends JComponent implements KeyListener {
     String printMon2Hp = "Monster 2 Hp: " + Integer.toString(newMonster2.hp);
     String printMon3Hp = "Monster 3 Hp: " + Integer.toString(newMonster3.hp);
 
-
+    graphics.setFont(new Font("TimesRoman", Font.PLAIN, 20));
     graphics.drawString(printLevel, 750, 50);
-    graphics.drawString(printBossHp, 750, 60);
-    graphics.drawString(printMon1Hp, 750, 70);
-    graphics.drawString(printMon2Hp, 750, 80);
-    graphics.drawString(printMon3Hp, 750, 90);
+    graphics.drawString(printBossHp, 750, 70);
+    graphics.drawString(printMon1Hp, 750, 90);
+    graphics.drawString(printMon2Hp, 750, 110);
+    graphics.drawString(printMon3Hp, 750, 130);
 
     if (level < 11) {
       skeleton.draw(graphics);
