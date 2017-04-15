@@ -52,13 +52,14 @@ public class GameEngine extends JComponent implements KeyListener {
     String printMon3Hp = "Monster 3 Hp: " + Integer.toString(newMonster3.hp);
 
     graphics.setFont(new Font("TimesRoman", Font.PLAIN, 20));
-    graphics.drawString(printLevel, 750, 50);
-    graphics.drawString(printBossHp, 750, 70);
-    graphics.drawString(printMon1Hp, 750, 90);
-    graphics.drawString(printMon2Hp, 750, 110);
-    graphics.drawString(printMon3Hp, 750, 130);
 
-    if (level < 11) {
+    if (level < 2) {
+      graphics.drawString(printLevel, 750, 50);
+      graphics.drawString(printBossHp, 750, 70);
+      graphics.drawString(printMon1Hp, 750, 90);
+      graphics.drawString(printMon2Hp, 750, 110);
+      graphics.drawString(printMon3Hp, 750, 130);
+
       skeleton.draw(graphics);
       skeleton2.draw(graphics);
       skeleton3.draw(graphics);
@@ -76,6 +77,9 @@ public class GameEngine extends JComponent implements KeyListener {
         newMonster2.monsterHP();
         newMonster3.monsterHP();
       }
+    } else {
+      graphics.setFont(new Font("TimesRoman", Font.PLAIN, 120));
+      graphics.drawString("YOU WIN!", 750, 150);
     }
   }
 
