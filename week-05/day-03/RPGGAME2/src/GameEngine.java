@@ -53,7 +53,7 @@ public class GameEngine extends JComponent implements KeyListener {
 
     graphics.setFont(new Font("TimesRoman", Font.PLAIN, 20));
 
-    if (level < 2) {
+    if (level < 11) {
       graphics.drawString(printLevel, 750, 50);
       graphics.drawString(printBossHp, 750, 70);
       graphics.drawString(printMon1Hp, 750, 90);
@@ -72,10 +72,15 @@ public class GameEngine extends JComponent implements KeyListener {
         newMonster3.randomPos();
         newBoss.randomPos();
 
-        newBoss.monsterHP();
-        newMonster1.monsterHP();
-        newMonster2.monsterHP();
-        newMonster3.monsterHP();
+        newBoss.monsterHP(level);
+        newMonster1.monsterHP(level);
+        newMonster2.monsterHP(level);
+        newMonster3.monsterHP(level);
+
+        newBoss.monsterDP(level);
+        newMonster1.monsterDP(level);
+        newMonster2.monsterDP(level);
+        newMonster3.monsterDP(level);
       }
     } else {
       graphics.setFont(new Font("TimesRoman", Font.PLAIN, 120));

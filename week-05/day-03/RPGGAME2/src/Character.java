@@ -60,12 +60,16 @@ public class Character extends GameObject {
     }
   }
 
-  void monsterHP() {
-    int hpVol2 = 0;
-    for (int i = 0; i < 2; i++) {
-      hpVol2 += dice();
-    }
-    this.hp = hpVol2 + 20;
+  void monsterHP(int level) {
+    this.hp = 2*level*dice()+(dice());
+  }
+
+  void monsterDP(int level) {
+    this.dp = level/2 * dice()* (+dice()/2);
+  }
+
+  void monsterSP(int level){
+    this.sp = level * dice() +(dice());
   }
 }
 
