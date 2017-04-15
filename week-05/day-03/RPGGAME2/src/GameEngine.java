@@ -81,6 +81,11 @@ public class GameEngine extends JComponent implements KeyListener {
         newMonster1.monsterDP(level);
         newMonster2.monsterDP(level);
         newMonster3.monsterDP(level);
+
+        newBoss.monsterSP(level);
+        newMonster1.monsterSP(level);
+        newMonster2.monsterSP(level);
+        newMonster3.monsterSP(level);
       }
     } else {
       graphics.setFont(new Font("TimesRoman", Font.PLAIN, 120));

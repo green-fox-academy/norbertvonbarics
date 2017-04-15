@@ -64,6 +64,10 @@ public class Character extends GameObject {
     this.hp = 2*level*dice()+(dice());
   }
 
+  void monsterHP() {
+    this.hp = 2*dice()+(dice());
+  }
+
   void monsterDP(int level) {
     this.dp = level/2 * dice()* (+dice()/2);
   }
