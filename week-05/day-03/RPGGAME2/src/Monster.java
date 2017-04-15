@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Monster extends Character {
   public Monster(int posX, int posY, String costume, int hp, int dp, int sp) {
@@ -16,19 +20,23 @@ public class Monster extends Character {
       this.costume = IMP;
     }
 
-    int hpVol2 = 0;
-    for (int i = 0; i < 2; i++) {
-      hpVol2 += dice();
-    }
-    this.hp = hpVol2 + 20;
+    monsterHP();
 
-    for (int i = 0; i < 3; i++) {
-      posX = (int) (Math.random() * 10);
-      posY = (int) (Math.random() * 10);
-      while (!myArray.IsWall(posX, posY)) {
-        posX = (int) (Math.random() * 10);
-        posY = (int) (Math.random() * 10);
+    randomPos();
+
+  /*  Timer timer = new Timer();
+    timer.schedule(new TimerTask() {
+      public void run() {
+        try {
+          Robot johnny5 = new Robot();
+          johnny5.keyPress(KeyEvent.VK_X);
+          johnny5.keyRelease(KeyEvent.VK_X);
+        } catch (AWTException ex) {
+          System.out.println("JOHNNY 5 ERROR");
+          ex.printStackTrace();
+        }
       }
-    }
+    }, 1000, 2000);
+*/
   }
 }

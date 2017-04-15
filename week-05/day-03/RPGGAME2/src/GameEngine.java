@@ -15,6 +15,7 @@ public class GameEngine extends JComponent implements KeyListener {
   private Board myArray = new Board();
 
   private int counter = 1;
+  int level = 1;
 
   private List<Tile> newTileList = new ArrayList<>();
 
@@ -28,34 +29,55 @@ public class GameEngine extends JComponent implements KeyListener {
         newTileList.add(newTile);
       }
     }
-    System.out.println(newHero.hp);
-    System.out.println(newMonster1.hp);
-    System.out.println(newMonster2.hp);
-    System.out.println(newMonster3.hp);
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-
     for (int i = 0; i < newTileList.size(); i++) {
       PositionedImage wall = new PositionedImage(newTileList.get(i).costume, newTileList.get(i).posX, newTileList.get(i).posY);
       wall.draw(graphics);
     }
-
     PositionedImage startHero = new PositionedImage(newHero.costume, newHero.posX * 72, newHero.posY * 72);
     startHero.draw(graphics);
 
     PositionedImage skeleton = new PositionedImage(newMonster1.costume, newMonster1.posX * 72, newMonster1.posY * 72);
-    skeleton.draw(graphics);
     PositionedImage skeleton2 = new PositionedImage(newMonster2.costume, newMonster2.posX * 72, newMonster2.posY * 72);
-    skeleton2.draw(graphics);
     PositionedImage skeleton3 = new PositionedImage(newMonster3.costume, newMonster3.posX * 72, newMonster3.posY * 72);
-    skeleton3.draw(graphics);
     PositionedImage boss = new PositionedImage(newBoss.costume, newBoss.posX * 72, newBoss.posY * 72);
-    boss.draw(graphics);
-  }
+    String printLevel = "Level: " + Integer.toString(level);
+    String printBossHp = "Boss Hp: " + Integer.toString(newBoss.hp);
+    String printMon1Hp = "Monster 1 Hp: " + Integer.toString(newMonster1.hp);
+    String printMon2Hp = "Monster 2 Hp: " + Integer.toString(newMonster2.hp);
+    String printMon3Hp = "Monster 3 Hp: " + Integer.toString(newMonster3.hp);
 
+
+    graphics.drawString(printLevel, 750, 50);
+    graphics.drawString(printBossHp, 750, 60);
+    graphics.drawString(printMon1Hp, 750, 70);
+    graphics.drawString(printMon2Hp, 750, 80);
+    graphics.drawString(printMon3Hp, 750, 90);
+
+    if (level < 11) {
+      skeleton.draw(graphics);
+      skeleton2.draw(graphics);
+      skeleton3.draw(graphics);
+      boss.draw(graphics);
+      if (newMonster1.hp < 1 && newMonster2.hp < 1 && newMonster3.hp < 1 && newBoss.hp < 1) {
+        level++;
+
+        newMonster1.randomPos();
+        newMonster2.randomPos();
+        newMonster3.randomPos();
+        newBoss.randomPos();
+
+        newBoss.monsterHP();
+        newMonster1.monsterHP();
+        newMonster2.monsterHP();
+        newMonster3.monsterHP();
+      }
+    }
+  }
 
   @Override
   public void keyTyped(KeyEvent e) {
@@ -77,25 +99,13 @@ public class GameEngine extends JComponent implements KeyListener {
       counter--;
     }
 
-  /*  Timer timer = new Timer();
-    timer.schedule(new TimerTask() {
-      public void run() {
-        try {
-          Robot johnny5 = new Robot();
-          johnny5.keyPress(KeyEvent.VK_X);
-          johnny5.keyRelease(KeyEvent.VK_X);
-        } catch (AWTException ex) {
-          System.out.println("JOHNNY 5 ERROR");
-          ex.printStackTrace();
-        }
-      }
-    }, 0, 10000);
-
+/*
     if (e.getKeyCode() == KeyEvent.VK_X) {
       newBoss.characterMove();
       newMonster1.characterMove();
       newMonster2.characterMove();
       newMonster3.characterMove();
+      System.out.println(counter2);
     }
 */
     if (e.getKeyCode() == KeyEvent.VK_UP) {
@@ -107,19 +117,19 @@ public class GameEngine extends JComponent implements KeyListener {
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       newHero.heroMoveRight();
     } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-      //attack method
+      if (newBoss.posX == newHero.posX && newBoss.posY == newHero.posY) {
+        newBoss.attackMonsters();
+      }
+      if (newMonster1.posX == newHero.posX && newMonster1.posY == newHero.posY) {
+        newMonster1.attackMonsters();
+      }
+      if (newMonster2.posX == newHero.posX && newMonster2.posY == newHero.posY) {
+        newMonster2.attackMonsters();
+      }
+      if (newMonster3.posX == newHero.posX && newMonster3.posY == newHero.posY) {
+        newMonster3.attackMonsters();
+      }
     }
     repaint();
   }
 }
-
-
-/* Timer t = new Timer();
-    t.schedule(new TimerTask() {
-         public void run(){
-            Robot r = new Robot();
-            r.keyPress(KeyEvent.VK_F1);
-            r.keyRelease(KeyEvent.VK_F1);
-         }
-    }, 0, 5000);
-  }*/
