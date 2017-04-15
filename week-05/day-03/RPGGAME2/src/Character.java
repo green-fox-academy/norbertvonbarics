@@ -15,11 +15,6 @@ public class Character extends GameObject {
     this.sp = sp;
   }
 
-  Character(int posX, int posY) {
-    this.posX = posX;
-    this.posY = posY;
-  }
-
   Character() {
   }
 

@@ -4,6 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.*;
 import java.util.List;
+import java.util.Timer;
 
 public class GameEngine extends JComponent implements KeyListener {
   private Hero newHero = new Hero();
@@ -28,6 +29,9 @@ public class GameEngine extends JComponent implements KeyListener {
       }
     }
     System.out.println(newHero.hp);
+    System.out.println(newMonster1.hp);
+    System.out.println(newMonster2.hp);
+    System.out.println(newMonster3.hp);
   }
 
   @Override
@@ -63,22 +67,37 @@ public class GameEngine extends JComponent implements KeyListener {
 
   @Override
   public void keyReleased(KeyEvent e) {
-      try {
-        Robot johnny5 = new Robot();
+    if (counter == 0) {
+      newBoss.characterMove();
+      newMonster1.characterMove();
+      newMonster2.characterMove();
+      newMonster3.characterMove();
+      counter++;
+    } else {
+      counter--;
+    }
 
-        johnny5.keyPress(KeyEvent.VK_X);
-        johnny5.keyRelease(KeyEvent.VK_X);
-      } catch  (AWTException ex) {
-        System.out.println("JOHNNY 5 ERROR");
-        ex.printStackTrace();
+  /*  Timer timer = new Timer();
+    timer.schedule(new TimerTask() {
+      public void run() {
+        try {
+          Robot johnny5 = new Robot();
+          johnny5.keyPress(KeyEvent.VK_X);
+          johnny5.keyRelease(KeyEvent.VK_X);
+        } catch (AWTException ex) {
+          System.out.println("JOHNNY 5 ERROR");
+          ex.printStackTrace();
+        }
       }
-      if (e.getKeyCode() == KeyEvent.VK_X) {
-        newBoss.characterMove();
-        newMonster1.characterMove();
-        newMonster2.characterMove();
-        newMonster3.characterMove();
-      }
+    }, 0, 10000);
 
+    if (e.getKeyCode() == KeyEvent.VK_X) {
+      newBoss.characterMove();
+      newMonster1.characterMove();
+      newMonster2.characterMove();
+      newMonster3.characterMove();
+    }
+*/
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       newHero.heroMoveUp();
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
@@ -93,3 +112,14 @@ public class GameEngine extends JComponent implements KeyListener {
     repaint();
   }
 }
+
+
+/* Timer t = new Timer();
+    t.schedule(new TimerTask() {
+         public void run(){
+            Robot r = new Robot();
+            r.keyPress(KeyEvent.VK_F1);
+            r.keyRelease(KeyEvent.VK_F1);
+         }
+    }, 0, 5000);
+  }*/

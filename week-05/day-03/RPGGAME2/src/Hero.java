@@ -8,12 +8,8 @@ public class Hero extends Character {
   private final String DOOMRIGHT ="./assets/doom/doom-right.png";
   private final String DOOMLEFT = "./assets/doom/doom-left.png";
 
-  public Hero(int posX, int posY, int hp, int dp, int sp) {
-    super(posX, posY);
-
-    this.hp = hp;
-    this.dp = dp;
-    this.sp = sp;
+  public Hero(int posX, int posY, String costume, int hp, int dp, int sp) {
+    super(posX, posY, costume, hp, dp, sp);
   }
 
 
