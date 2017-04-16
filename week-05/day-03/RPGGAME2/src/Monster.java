@@ -10,7 +10,6 @@ public class Monster extends Character {
 
   private final String IMP = "./assets/doom/imp.png";
   private final String ZOMBIE = "./assets/doom/zombie.png";
-  private Board myArray = new Board();
 
   Monster() {
     int random = (int) (Math.random() * 2);
@@ -21,7 +20,6 @@ public class Monster extends Character {
     }
 
     monsterHP();
-
     randomPos();
 
   /*  Timer timer = new Timer();

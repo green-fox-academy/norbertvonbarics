@@ -28,7 +28,7 @@ public class Hero extends Character {
     this.sp = 5 + dice();
   }
 
-  void heroMoveUp() {
+   void heroMoveUp() {
     super.costume = DOOMUP;
     if ((myArray.IsWall(posX, posY - 1)) && (posY > 0)) {
       posY -= 1;
