@@ -22,4 +22,12 @@ abstract class Animal {
   String getName() {
     return name;
   }
+
+  public String getGender() {
+    return gender;
+  }
+
+  public int getAge() {
+    return age;
+  }
 }
