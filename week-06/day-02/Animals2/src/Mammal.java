@@ -1,10 +1,9 @@
-
-public class Mammal extends Animal {
+class Mammal extends Animal implements Herbivore, Carnivore {
   Mammal(String name, int age, String gender) {
     super(name, age, gender);
   }
 
-  Mammal (String name) {
+  Mammal(String name) {
     super(name);
   }
 
@@ -20,7 +19,22 @@ public class Mammal extends Animal {
   }
 
   @Override
-  void move() {
-    System.out.println("I am walking!");
+  String move() {
+    return "is walking";
+  }
+
+  @Override
+  public String eat() {
+    return "eating flesh and vegetables!";
+  }
+
+  @Override
+  public String eatMeat() {
+    return "eating flesh!";
+  }
+
+  @Override
+  public String eatLeaves() {
+    return "eating leaves!";
   }
 }

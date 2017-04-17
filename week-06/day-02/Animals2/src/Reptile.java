@@ -1,5 +1,5 @@
 
-public class Reptile extends Animal {
+class Reptile extends Animal {
   Reptile(String name, int age, String gender) {
     super(name, age, gender);
   }
@@ -13,13 +13,18 @@ public class Reptile extends Animal {
     System.out.println("Hello, I am a " + this.name + "!");
   }
 
+    @Override
+    String wantChild() {
+      return "want a child from an egg!";
+    }
+
   @Override
-  String wantChild() {
-    return "want a child from an egg!";
+  String move() {
+    return "is crawling";
   }
 
   @Override
-  void move() {
-    System.out.println("I am crawling!");
+  String eat() {
+    return "eating flesh!";
   }
 }

@@ -1,5 +1,5 @@
 
-public abstract class Animal {
+abstract class Animal {
   String name;
   int age;
   String gender;
@@ -16,9 +16,10 @@ public abstract class Animal {
 
   abstract void greet();
   abstract String wantChild();
-  abstract void move();
+  abstract String move();
+  abstract String eat();
 
-  public String getName() {
+  String getName() {
     return name;
   }
 }

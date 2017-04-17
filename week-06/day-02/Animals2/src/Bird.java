@@ -1,5 +1,5 @@
 
-public class Bird extends Animal {
+public class Bird extends Animal implements Fly {
   Bird(String name, int age, String gender) {
     super(name, age, gender);
   }
@@ -19,7 +19,17 @@ public class Bird extends Animal {
   }
 
   @Override
-  void move() {
-    System.out.println("I am flying!");
+  String move() {
+    return "is flapping in the ground";
+  }
+
+  @Override
+  public String fly() {
+    return "flying above the clouds";
+  }
+
+  @Override
+  String eat() {
+    return "eating seeds!";
   }
 }
