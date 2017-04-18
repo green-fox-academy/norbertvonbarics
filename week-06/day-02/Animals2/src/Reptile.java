@@ -13,10 +13,10 @@ class Reptile extends Animal {
     System.out.println("Hello, I am a " + this.name + "!");
   }
 
-    @Override
-    String wantChild() {
-      return "want a child from an egg!";
-    }
+  @Override
+  String wantChild() {
+    return "want a child from an egg!";
+  }
 
   @Override
   String move() {

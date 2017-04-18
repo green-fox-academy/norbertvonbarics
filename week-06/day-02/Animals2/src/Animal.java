@@ -15,8 +15,11 @@ abstract class Animal {
   }
 
   abstract void greet();
+
   abstract String wantChild();
+
   abstract String move();
+
   abstract String eat();
 
   String getName() {
