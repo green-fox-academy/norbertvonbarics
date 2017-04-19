@@ -19,7 +19,7 @@ public class Deck {
         } else {
           cardColor = Color.values()[1].name();
         }
-        Card newCard = new Card(Rank.values()[j].name(), Suit.values()[i].name(), cardColor);
+        Card newCard = new Card(Rank.values()[j].getValue(), Suit.values()[i].name(), cardColor);
         deck.add(newCard);
       }
     }
@@ -39,9 +39,12 @@ public class Deck {
     deck.remove(deck.size()-1);
   }
 
-  void drawRandom () {
-    int random = (int) (Math.random()*deck.size());
+  int drawRandom () {
+    int random = (int) (Math.random()*deck.size()-1);
+    int tempNumber;
     System.out.println(deck.get(random));
+    tempNumber = deck.get(random).getValue();
     deck.remove(random);
+  return tempNumber;
   }
 }
