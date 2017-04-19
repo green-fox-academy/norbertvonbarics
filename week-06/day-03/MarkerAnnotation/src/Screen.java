@@ -5,9 +5,11 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @interface Monitor {
-  String type() default "TFT";
+  String classification() default "TFT";
   String aspectratio() default "4:3";
 }
+
+enum Size {INCH15, INCH17, INCH19, INCH21, INCH23, INCH25, INCH29, INCH34}
 
 @Monitor
 public class Screen {
