@@ -1,21 +1,20 @@
 
 public class Card {
-  public enum Color {RED, BLACK}
+  private String value;
+  private String name;
+  private String color;
 
-  public enum Suit {HEARTS, CLUBS, SPADES, DIAMONDS}
-
-  public enum Rank {
-    TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7), EIGHT(8), NINE(9), TEN(10), JACK(11), QUEEN(12), KING(13), ACE(14);
-
-    private final int value;
-
-    Rank(int value) {
-      this.value = value;
-    }
-
-    public int getValue() {
-      return value;
-    }
+  public Card (String value, String name, String color) {
+    this.value = value;
+    this.name = name;
+    this.color = color;
+  }
+  @Override
+  public String toString() {
+    return this.value + " " + this.name + " " + this.color;
   }
 }
+
+
+
 
