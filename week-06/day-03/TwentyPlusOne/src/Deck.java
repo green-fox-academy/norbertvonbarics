@@ -28,4 +28,20 @@ public class Deck {
   void shuffleDeck (){
     Collections.shuffle(deck);
   }
+
+  void drawFirst (){
+    System.out.println(deck.get(0));
+    deck.remove(0);
+  }
+
+  void drawLast () {
+    System.out.println(deck.get(deck.size()-1));
+    deck.remove(deck.size()-1);
+  }
+
+  void drawRandom () {
+    int random = (int) (Math.random()*deck.size());
+    System.out.println(deck.get(random));
+    deck.remove(random);
+  }
 }

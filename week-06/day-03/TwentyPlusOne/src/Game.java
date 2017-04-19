@@ -7,5 +7,12 @@ public class Game {
     System.out.println(newDeck.toString());
     newDeck.shuffleDeck();
     System.out.println(newDeck);
+
+    newDeck.drawFirst();
+    System.out.println(newDeck);
+    newDeck.drawLast();
+    System.out.println(newDeck);
+    newDeck.drawRandom();
+    System.out.println(newDeck);
   }
 }
