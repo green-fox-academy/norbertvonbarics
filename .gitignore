@@ -1,6 +1,11 @@
 out
 *.class
 .idea
+gradle
+.gradle
 *.iml
 *.xml
 *.mp3
+*.jar
+*.gradle
+*.bat
