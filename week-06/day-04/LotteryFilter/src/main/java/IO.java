@@ -8,14 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 class IO {
+
   private List<String[]> lines = new ArrayList<String[]>();
 
-  List<String[]> readFile() {
+  List<String[]> readFile(String input) {
     try {
-      CSVReader reader = new CSVReader(new FileReader("./assets/otos.csv"), ';');
+      CSVReader reader = new CSVReader(new FileReader(input), ';');
       lines = reader.readAll();
     } catch (IOException ex) {
       System.out.println("SYNTAX ERROR READ");
+      System.out.println(input);
       ex.printStackTrace();
     } catch (Exception ex) {
       System.out.println("SYNTAX ERROR IMPORT");

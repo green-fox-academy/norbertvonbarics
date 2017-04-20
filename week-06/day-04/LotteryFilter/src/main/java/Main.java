@@ -1,36 +1,38 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 
 public class Main {
+
   public static void main(String[] args) {
+
+    int date = 0;
+    String inputFile = "";
+    String outputFile = "";
+
+    Sort sort = new Sort();
     IO io = new IO();
-    io.readFile();
-    io.writeFile(sort(io.readFile(), 2014));
 
     OptionParser parser = new OptionParser();
-    parser.accepts("l");
-    parser.accepts("a").withRequiredArg();
+    parser.accepts("y").withRequiredArg();
+    parser.accepts("f").withRequiredArg();
+    parser.accepts("o").withRequiredArg();
     OptionSet options = parser.parse(args);
-
-    if (options.has("a")) {
-      System.out.println("`-a` was given with the argument " + options.valueOf("a"));
+    if (options.has("y")) {
+      date = Integer.parseInt((String) options.valueOf("y"));
     }
 
-    if (options.has("l")) {
-      System.out.println("`-l` was given with the no additional information.");
+    if (options.has("f")) {
+      inputFile = (String) options.valueOf("f");
+      io.readFile(inputFile);
     }
-  }
 
-  static List<String[]> sort (List<String[]> lines, int date) {
-    List<String[]> sortedList = new ArrayList<String[]>();
-    for (String[] line : lines) {
-      if (line[0].equals(Integer.toString(date))) {
-        sortedList.add(line);
-      }
+    if (options.has("o")) {
+      outputFile = (String) options.valueOf("o");
+      io.writeFile(sort.toSort(io.readFile(outputFile), date));
     }
-    return sortedList;
+
+    System.out.println("DATE: " + date);
+    System.out.println("INPUT: " + inputFile);
+    System.out.println("OUTPUT: " + outputFile);
   }
 }
