@@ -26,9 +26,9 @@ class IO {
     return lines;
   }
 
-  void writeFile(List<String[]> sortedLines) {
+  void writeFile(List<String[]> sortedLines, String outputFile) {
     try {
-      CSVWriter writer = new CSVWriter(new FileWriter("./assets/otos2.csv"), ';',
+      CSVWriter writer = new CSVWriter(new FileWriter(outputFile), ';',
           CSVWriter.NO_QUOTE_CHARACTER);
       writer.writeAll(sortedLines);
       writer.close();

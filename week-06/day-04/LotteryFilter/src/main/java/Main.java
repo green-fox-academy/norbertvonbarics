@@ -11,24 +11,25 @@ public class Main {
 
     Sort sort = new Sort();
     IO io = new IO();
-
+    //date = Integer.parseInt(args[1]);
     OptionParser parser = new OptionParser();
     parser.accepts("y").withRequiredArg();
     parser.accepts("f").withRequiredArg();
     parser.accepts("o").withRequiredArg();
+
     OptionSet options = parser.parse(args);
     if (options.has("y")) {
-      date = Integer.parseInt((String) options.valueOf("y"));
+      date = Integer.parseInt(options.valueOf("y").toString());
     }
 
     if (options.has("f")) {
-      inputFile = (String) options.valueOf("f");
+      inputFile = options.valueOf("f").toString();
       io.readFile(inputFile);
     }
 
     if (options.has("o")) {
-      outputFile = (String) options.valueOf("o");
-      io.writeFile(sort.toSort(io.readFile(outputFile), date));
+      outputFile = options.valueOf("o").toString();
+      io.writeFile(sort.toSort(io.readFile(outputFile), date), outputFile);
     }
 
     System.out.println("DATE: " + date);
