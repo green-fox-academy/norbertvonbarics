@@ -1,6 +1,7 @@
 
 public class Ascii {
   public void printAscii (){
+    System.out.println("");
     System.out.println(" ______   ___   ___     ___       _      ____ _____ ______ \n" +
         "|      | /   \\ |   \\   /   \\     | |    |    / ___/|      |\n" +
         "|      ||     ||    \\ |     |    | |     |  (   \\_ |      |\n" +
@@ -9,6 +10,7 @@ public class Ascii {
         "  |  |  |     ||     ||     |    |     | |  |\\    |  |  |  \n" +
         "  |__|   \\___/ |_____| \\___/     |_____||____|\\___|  |__|  \n" +
         "                                                           \n");
+    System.out.println("");
   }
 
   public void printUsage() {
