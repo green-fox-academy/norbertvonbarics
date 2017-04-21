@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadFile {
+class ReadFile {
 
   private static final String DATAPATH = "./assets/data.csv";
   private static final String ERROR = "SYNTAX ERROR: ";

@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class WriteFile {
+class WriteFile {
 
   private static final String DATAPATH = "./assets/data.csv";
   private static final String ERROR = "SYNTAX ERROR: ";
@@ -18,6 +18,4 @@ public class WriteFile {
       System.out.println(ERROR + "WRITE");
     }
   }
-
-
 }

@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Print {
+class Print {
 
   static void print(List todoList) {
     for (int i = 0; i < todoList.size(); i++) {
@@ -9,9 +9,9 @@ public class Print {
   }
 
   static void printUncomplete(List todoList) {
-    for (int j = 0; j < todoList.size(); j++) {
-      if (todoList.get(j).toString().substring(0, 3).equals("[ ]")) {
-        System.out.println(todoList.get(j));
+    for (Object aTodoList : todoList) {
+      if (aTodoList.toString().substring(0, 3).equals("[ ]")) {
+        System.out.println(aTodoList);
       }
     }
   }
