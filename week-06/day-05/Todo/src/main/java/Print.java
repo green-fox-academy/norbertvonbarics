@@ -1,7 +1,7 @@
 import java.util.List;
 
 class Print {
-
+/*
   static void print(List todoList) {
     for (int i = 0; i < todoList.size(); i++) {
       System.out.println(i + 1 + " - " + todoList.get(i));
@@ -14,5 +14,5 @@ class Print {
         System.out.println(aTodoList);
       }
     }
-  }
+  }*/
 }

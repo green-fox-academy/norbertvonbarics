@@ -12,11 +12,11 @@ class TaskRemove {
       if (args.length == 1) {
         System.out.println("\n" + LINE + UNABLETOREMOVE + LINE);
       } else {
-        String remove = todoList.get(Integer.parseInt(args[1]) - 1).substring(4);
+        String remove = todoList.get(Integer.parseInt(args[1]) - 1);
         todoList.remove(Integer.parseInt(args[1]) - 1);
         System.out.println("\n" + "Task " + remove + REMOVED);
         WriteFile.writeToFile(todoList);
-        Print.print(todoList);
+        PrintList.printList(args);
       }
     }
   }

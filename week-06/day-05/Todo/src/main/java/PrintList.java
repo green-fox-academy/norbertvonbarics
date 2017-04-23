@@ -4,11 +4,11 @@ class PrintList {
 
   static void printList(String[] args) {
     List<String> todoList = ReadFile.readFiles();
-    if (args[0].equals("-l")) {
-      Print.printUncomplete(todoList);
 
-    } else if (args[0].equals("-la")) {
-      Print.print(todoList);
+    for (int i = 0; i < todoList.size(); i++) {
+      for (int j = 0; j < todoList.size(); j++) {
+        System.out.println(todoList.get(i));
+      }
     }
   }
 }

@@ -12,13 +12,13 @@ class TaskCheck {
         System.out.println("\n" + LINE + UNABLETOCHECK + LINE);
 
       } else {
-        String tempTask = todoList.get(Integer.parseInt(args[1]) - 1).substring(3);
+        String tempTask = todoList.get(Integer.parseInt(args[1]) - 1);
         int tempInt = Integer.parseInt(args[1]) - 1;
         todoList.set(tempInt, "[X]" + tempTask);
         System.out.println("");
         WriteFile.writeToFile(todoList);
       }
-      Print.print(todoList);
+      PrintList.printList(args);
     }
   }
 }
