@@ -5,7 +5,7 @@ public class SumOfElements {
     System.out.println(sum(r));
   }
 
-  public static int sum(int[] a) {
+  private static int sum(int[] a) {
     return a[1] + a[2];
   }
 }

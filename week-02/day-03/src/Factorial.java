@@ -2,10 +2,10 @@
 public class Factorial {
   public static void main(String[] args) {
     int num1 = 5;
-    System.out.println(factorio(num1));
+    System.out.println(factorial(num1));
   }
 
-  public static int factorio(int a) {
+  public static int factorial(int a) {
     int x = 1;
     if (a == 1) {
       x = a;

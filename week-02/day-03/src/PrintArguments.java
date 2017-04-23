@@ -5,12 +5,12 @@ public class PrintArguments {
     System.out.println(printer(input));
   }
 
-  public static String printer(String[] a) {
-    String x = "";
-    for (int i = 0; i < a.length; i++) {
-      x += (a[i] + " ");
+  private static String printer(String[] inputText) {
+    String joinedText = "";
+    for (String text : inputText) {
+      joinedText += (text + " ");
     }
-    return x;
+    return joinedText;
   }
 }
 
