@@ -1,5 +1,3 @@
-import java.awt.Color;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,12 +5,12 @@ import java.util.Map;
 
 public class Parkinglot {
 
-  List<Car> parkinglot = new ArrayList<>();
+  private List<Car> parkinglot = new ArrayList<>();
 
   void fillParkinglot() {
     for (int i = 0; i < 256; i++) {
       Car car = new Car();
-      parkinglot.add(car);
+      getParkinglot().add(car);
     }
   }
 
@@ -59,6 +57,11 @@ public class Parkinglot {
         maxEntry = entry;
       }
     }
-    System.out.println(maxEntry);
+    assert maxEntry != null;
+    System.out.println(maxEntry.getKey());
+  }
+
+  public List<Car> getParkinglot() {
+    return parkinglot;
   }
 }
