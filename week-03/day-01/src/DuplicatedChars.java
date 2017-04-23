@@ -1,3 +1,4 @@
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -7,21 +8,26 @@ import java.util.List;
 import java.io.FileWriter;
 
 public class DuplicatedChars {
+
   public static void main(String[] args) {
+    System.out.println(removeDoubleChars());
+  }
+
+  private static List<String> removeDoubleChars() {
     Path duplicate = Paths.get("duplicated-chars.txt");
     ArrayList<String> finalText = new ArrayList<>();
     try {
       List<String> text = Files.readAllLines(duplicate);
-      for (int i = 0; i < text.size(); i++) {
-        String corText = "";
-        for (int j = 0; j < text.get(i).length(); j += 2) {
-          corText += text.get(i).charAt(j);
+      for (String aText : text) {
+        String coreText = "";
+        for (int j = 0; j < aText.length(); j += 2) {
+          coreText += aText.charAt(j);
         }
-        finalText.add(corText);
+        finalText.add(coreText);
       }
     } catch (IOException ex) {
       System.out.println("SYNTAX ERROR");
     }
-    System.out.println(finalText);
+    return finalText;
   }
 }
