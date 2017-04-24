@@ -3,8 +3,8 @@ import java.util.List;
 
 class PrintList {
 
-  static List<Todo> todoList = ReadFile.readFiles();
-  static List<String> printedList = new ArrayList<>();
+  private static List<Todo> todoList = ReadFile.readFiles();
+  private static List<String> printedList = new ArrayList<>();
 
   static void printList(String[] args) {
 
@@ -28,7 +28,7 @@ class PrintList {
     }
   }
 
-  static void printUnchecked() {
+  private static void printUnchecked() {
     for (int j = 0; j < todoList.size(); j++) {
       if (!todoList.get(j).checked) {
         printedList.add((j + 1) + "[ ] #ID:" + todoList.get(j).id + " " + todoList.get(j).todo);
