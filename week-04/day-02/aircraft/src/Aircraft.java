@@ -13,10 +13,10 @@ class Aircraft {
     this.damage = damage;
   }
 
-  int fight() {
-    int temp = this.ammo;
+  private int fight() {
+    int maxDamage = this.ammo *this.damage;
     this.ammo = 0;
-    return temp * this.damage;
+    return maxDamage;
   }
 
   int refill(int numberRefill) {
@@ -24,19 +24,25 @@ class Aircraft {
     return numberRefill - this.maxAmmo;
   }
 
-  public String getType() {
+  String getType() {
     return this.type;
-  }
-
-  public String getStatus() {
-    return "Type " + this.type + ", Ammo: " + this.ammo + ", Base Damage: " + this.damage
-        + ", All Damage: " +
-        fight();
   }
 
   @Override
   public String toString() {
-    return "Type: " + type + ", Ammo: " + ammo + ", MaxAmmo: " + maxAmmo + ", damage: " + damage
-        + "All Damage: " + fight() +"\n";
+    return "Type: " + type + ", Ammo: " + ammo + ", damage: " + damage
+        + ", All Damage: " + this.ammo *this.damage;
+  }
+
+  int getAmmo() {
+    return ammo;
+  }
+
+  int getDamage() {
+    return damage;
+  }
+
+  public void setAmmo(int ammo) {
+    this.ammo = ammo;
   }
 }
