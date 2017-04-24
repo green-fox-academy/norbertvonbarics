@@ -11,31 +11,31 @@ public class Animal {
   private int thirst;
   private String name;
 
-  public Animal() {
+  private Animal() {
     this("el chupacabra", 50, 50);
   }
 
-  public Animal(String name, int hunger, int thirst) {
+  private Animal(String name, int hunger, int thirst) {
     this.name = name;
     this.hunger = hunger;
     this.thirst = thirst;
   }
 
-  public int eat() {
+  private int eat() {
     return hunger--;
   }
 
-  public int drink() {
+  private int drink() {
     return thirst--;
   }
 
-  public void play() {
+  private void play() {
     hunger++;
     thirst++;
   }
 
   public static void main(String[] args) {
-    Animal zebra = new Animal();
+    Animal zebra = new Animal("zebra", 50,50);
 
     System.out.println(zebra.hunger);
     zebra.eat();

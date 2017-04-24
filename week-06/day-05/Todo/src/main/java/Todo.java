@@ -6,18 +6,14 @@ public class Todo {
   boolean checked;
 
 
-  Todo(String todo, int id, boolean checked) {
+  Todo(boolean checked, int id, String todo) {
     this.id = id;
     this.todo = todo;
-    this.checked = false;
-  }
-
-  public Todo() {
-    this("defaultTodo", 0, true);
+    this.checked = checked;
   }
 
   @Override
   public String toString() {
-    return this.id + this.todo;
+    return this.checked + " " + this.id + " " + this.todo;
   }
 }

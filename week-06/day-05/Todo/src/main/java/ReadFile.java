@@ -10,7 +10,7 @@ class ReadFile {
   private static final String DATAPATH = "./assets/data.csv";
   private static final String ERROR = "SYNTAX ERROR: ";
 
-  static List<String> readFiles() {
+  static List<Todo> readFiles() {
     List<String> rawLines = new ArrayList<>();
     Path myPath = Paths.get(DATAPATH);
     try {
@@ -18,6 +18,13 @@ class ReadFile {
     } catch (IOException ex) {
       System.out.println(ERROR + "READ");
     }
-    return rawLines;
+    List<Todo> todos = new ArrayList<>();
+    for (String rawLine : rawLines) {
+      String[] tempElements = rawLine.split(";");
+      boolean checked = tempElements[0].equals("true");
+      Todo todo = new Todo(checked, Integer.parseInt(tempElements[1]), tempElements[2]);
+      todos.add(todo);
+    }
+    return todos;
   }
 }

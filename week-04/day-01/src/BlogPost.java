@@ -1,16 +1,15 @@
-import java.util.Date;
-
 public class BlogPost {
+
   private String author;
   private String title;
   private String text;
   private String publicationDate;
 
-  public BlogPost() {
+  private BlogPost() {
     this("jane doe", "no way", "not", "2000.01.01");
   }
 
-  public BlogPost(String author, String title, String text, String publicationDate) {
+  private BlogPost(String author, String title, String text, String publicationDate) {
     this.author = author;
     this.title = title;
     this.text = text;
@@ -34,7 +33,9 @@ public class BlogPost {
 
     post3.author = "William Turton";
     post3.title = "One Engineer Is Trying to Get IBM to Reckon With Trump";
-    post3.text = "Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the center of attention." +
+    post3.text =
+        "Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the center of attention."
+            +
             " When I asked to take his picture outside one of IBM’s New York City offices," +
             " he told me that he wasn’t really into the whole organizer profile thing.";
     post3.publicationDate = "2017.03.28.";

@@ -7,12 +7,12 @@ class TaskRemove {
   private static final String REMOVED = " removed from ToDo list!";
 
   static void taskRemove(String[] args) {
-    List<String> todoList = ReadFile.readFiles();
+    List<Todo> todoList = ReadFile.readFiles();
     if (args[0].equals("-r")) {
       if (args.length == 1) {
         System.out.println("\n" + LINE + UNABLETOREMOVE + LINE);
       } else {
-        String remove = todoList.get(Integer.parseInt(args[1]) - 1);
+        Todo remove = todoList.get(Integer.parseInt(args[1]) - 1);
         todoList.remove(Integer.parseInt(args[1]) - 1);
         System.out.println("\n" + "Task " + remove + REMOVED);
         WriteFile.writeToFile(todoList);
