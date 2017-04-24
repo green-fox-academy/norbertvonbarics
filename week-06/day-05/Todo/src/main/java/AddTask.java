@@ -19,7 +19,7 @@ class AddTask {
         todoList.add(userInput);
         System.out.println("\n" + "Task " + args[1] + ADD);
         WriteFile.writeToFile(todoList);
-        PrintList.printList(args);
+        PrintList.printAll();
       }
     }
   }

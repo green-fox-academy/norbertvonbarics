@@ -16,7 +16,7 @@ class TaskRemove {
         todoList.remove(Integer.parseInt(args[1]) - 1);
         System.out.println("\n" + "Task " + remove + REMOVED);
         WriteFile.writeToFile(todoList);
-        PrintList.printList(args);
+        PrintList.printAll();
       }
     }
   }

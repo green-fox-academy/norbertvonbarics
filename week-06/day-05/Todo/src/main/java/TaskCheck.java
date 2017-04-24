@@ -14,7 +14,7 @@ class TaskCheck {
         todoList.get(Integer.parseInt(args[1])-1).checked = true;
         WriteFile.writeToFile(todoList);
       }
-      PrintList.printList(args);
+      PrintList.printAll();
     }
   }
 }
