@@ -7,9 +7,9 @@ class PrintList {
     if (args[0].equals("-la")) {
       for (int i = 0; i < todoList.size(); i++) {
         if (!todoList.get(i).checked) {
-          System.out.println((i + 1) + " [ ] " + todoList.get(i).id + " " + todoList.get(i).todo);
+          System.out.println((i + 1) + " [ ] #ID:" + todoList.get(i).id + " " + todoList.get(i).todo);
         } else {
-          System.out.println((i + 1) + " [X] " + todoList.get(i).id + " " + todoList.get(i).todo);
+          System.out.println((i + 1) + " [X] #ID:" + todoList.get(i).id + " " + todoList.get(i).todo);
         }
       }
     }
