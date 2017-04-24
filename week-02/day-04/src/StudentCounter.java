@@ -42,25 +42,25 @@ public class StudentCounter {
     row5.put("candies", 2);
     map.add(row5);
 
-    for (int i = 0; i < map.size(); i++) {
-      if ((int) map.get(i).get("candies") > 4) {
-        System.out.println(map.get(i).get("name"));
+    for (Map<String, Object> aMap : map) {
+      if ((int) aMap.get("candies") > 4) {
+        System.out.println(aMap.get("name"));
       }
     }
 
-    int candy = 0;
-    String age = new String();
-    double age1 = 0;
+    int candy;
+    String age;
+    double age1;
     double agesum = 0;
-    for (int j = 0; j < map.size(); j++) {
-      candy = Integer.parseInt(map.get(j).get("candies").toString());
+    for (Map<String, Object> aMap : map) {
+      candy = Integer.parseInt(aMap.get("candies").toString());
       if (candy < 5) {
-        age = map.get(j).get("age").toString();
+        age = aMap.get("age").toString();
         age1 = Double.parseDouble(age);
         agesum += age1;
-        System.out.println(agesum);
       }
     }
+    System.out.println(agesum);
   }
 }
 
