@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EncodedList {
+
   public static void main(String[] args) {
     System.out.println(fileRead());
     System.out.println(decoder(fileRead()));
@@ -30,24 +31,24 @@ public class EncodedList {
   }
 
 
-  public static List<String> fileRead() {
+  private static List<String> fileRead() {
     List<String> lines;
     Path text = Paths.get("assets/encoded-lines.txt");
     try {
       lines = Files.readAllLines(text);
     } catch (IOException ex) {
-      System.out.println("SYNTAX ERROR!");
+      System.out.println("READ ERROR!");
       lines = new ArrayList<>();
     }
     return lines;
   }
 
-  public static void writer(List<String> text) {
+  private static void writer(List<String> text) {
     Path output = Paths.get("assets/decodedlines.txt");
     try {
       Files.write(output, text);
     } catch (IOException ex) {
-      System.out.println("PRINT ERROR");
+      System.out.println("WRITE ERROR");
     }
   }
 }

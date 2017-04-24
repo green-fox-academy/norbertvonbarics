@@ -1,42 +1,60 @@
 
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
 public class Lotto {
+
   public static void main(String[] args) {
     Path lotto = Paths.get("otos.txt");
     ArrayList<String> numbers = new ArrayList<>();
     try {
       List<String> text = Files.readAllLines(lotto);
-      String[] separate = {};
+      String[] separate;
       for (String line : text) {
         separate = line.split(";");
         for (int i = separate.length - 1; i > separate.length - 6; i--) {
           numbers.add(separate[i]);
         }
       }
-     /* System.out.println(numbers);*/
     } catch (IOException ex) {
       System.out.println("Catch executed!");
     }
 
-
-    System.out.println(numbers);
     HashMap<String, Integer> sorted = new HashMap<>();
 
-    for (
-            int i = 0; i < numbers.size(); i++)
-
-    {
-      Integer count = sorted.get(numbers.get(i));
-    /*  sorted.put(numbers.get(i)), count == null ? 1 : count + 1;*/
+    for (String number : numbers) {
+      if (sorted.containsKey(number)) {
+        sorted.put(number, sorted.get(number) + 1);
+      } else {
+        sorted.put(number, 1);
+      }
     }
+
+    List<Integer> values = new ArrayList<>();
+    for (Map.Entry<String, Integer> entry : sorted.entrySet()) {
+      values.add(entry.getValue());
+    }
+    Collections.sort(values);
+
+    Map<String, Integer> mostCommonNumbers = new HashMap<>();
+
+    for (int k = 0; k < 6; k++) {
+      Map.Entry<String, Integer> maxEntry = null;
+      for (Map.Entry<String, Integer> entry : sorted.entrySet()) {
+        if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
+          maxEntry = entry;
+        }
+      }
+      assert maxEntry != null;
+
+      mostCommonNumbers.put(maxEntry.getKey(), maxEntry.getValue());
+      sorted.remove(maxEntry.getKey(), maxEntry.getValue());
+    }
+    System.out.println(mostCommonNumbers);
   }
 }
-
 // Create a method that find the 5 most common lotto numbers assets/lotto.csv

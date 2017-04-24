@@ -1,11 +1,11 @@
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.io.FileWriter;
 
 public class DuplicatedChars {
 
@@ -25,8 +25,12 @@ public class DuplicatedChars {
         }
         finalText.add(coreText);
       }
+    } catch (NoSuchFileException ex) {
+      System.out.println("NO SUCH FILE");
+      ex.printStackTrace();
     } catch (IOException ex) {
       System.out.println("SYNTAX ERROR");
+      ex.printStackTrace();
     }
     return finalText;
   }

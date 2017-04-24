@@ -6,26 +6,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReversedLines {
+
   public static void main(String[] args) {
     System.out.println(finalList(readLines()));
 
   }
 
-  public static List<String> finalList(List<String> text) {
+  private static List<String> finalList(List<String> text) {
     List<String> finalText = new ArrayList<>();
     text = readLines();
-    for (int i = 0; i < text.size(); i++) {
+    for (String aText : text) {
       String corText = "";
-      for (int j = text.get(i).length() - 1; j > 0; j--) {
-        corText += text.get(i).charAt(j);
+      for (int j = aText.length() - 1; j > 0; j--) {
+        corText += aText.charAt(j);
       }
       finalText.add(corText);
     }
-
     return finalText;
   }
 
-  public static List<String> readLines() {
+  private static List<String> readLines() {
     List<String> lines;
     Path reversedLines = Paths.get("assets/reversed-lines.txt");
     try {
