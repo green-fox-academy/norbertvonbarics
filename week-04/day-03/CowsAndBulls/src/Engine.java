@@ -3,14 +3,17 @@ import java.util.List;
 class Engine {
 
   static void play() {
-
     List<Integer> number = RandomNumber.randomNumber();
     UserInput newInput = new UserInput();
-    int counter = 0;
+    int counter = 5;
     int win = 0;
+    System.out.println("Guess a 4 digit number!");
 
-    while ((counter < 5) && (win < 1)) {
+    while ((counter > 0) && (win < 1)) {
+      System.out.println("You have " + counter + " chance!");
+
       List<Integer> input = newInput.myScanner();
+
       for (int i = 0; i < 4; i++) {
         if (number.get(i).equals(input.get(i))) {
           System.out.println("COW!!");
@@ -20,7 +23,8 @@ class Engine {
           System.out.println("X");
         }
       }
-      counter++;
+      counter--;
+
       String userInputString = "";
       String enemyNumber = "";
       for (int i = 0; i < number.size(); i++) {
@@ -31,12 +35,11 @@ class Engine {
         win += 1;
       }
     }
-    if (counter >= 5) {
+    if (counter == 0) {
       System.out.println("YOU LOSE!");
     } else {
       System.out.println("YOU WIN!");
     }
-
     System.out.println(number);
   }
 }

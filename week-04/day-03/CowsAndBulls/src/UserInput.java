@@ -7,7 +7,6 @@ import java.util.Scanner;
 class UserInput {
    List<Integer> myScanner() {
     Scanner myScanner = new Scanner(System.in);
-    System.out.println("I need 4 digits!");
     int userInput = myScanner.nextInt();
     List<Integer> input = new ArrayList<>();
     for (int i = 0; i < 4; i++) {
