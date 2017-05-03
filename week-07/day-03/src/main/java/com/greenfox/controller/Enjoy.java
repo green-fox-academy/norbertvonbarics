@@ -5,12 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class Accounts {
-  @RequestMapping("/Exercise1")
+public class Enjoy {
+  @RequestMapping("/Exercise4")
   public String accountController(Model model) {
-    BankAccount simba = new BankAccount("simba", "2000", "lion");
-    model.addAttribute("simba", simba);
-    return "AccountTemplate1";
-
+    model.addAttribute("enjoy", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
+    return "EnjoyTemplate";
   }
 }

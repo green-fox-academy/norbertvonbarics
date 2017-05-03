@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Title</title>
+</head>
+<body>
+<p th:each="item, iter : ${accounts}"
+   th:if="${item.king} == true" th:style="|color: gold|"
+   th:switch="${item.good}">
+  <button type="button">Click Me!</button>
+<span th:case="true"
+   th:text=" 'Good one ' + ${iter.index+1} + ' ' + ${item.king}+' Name: ' + ${item.name}  + ' Balance: '
++ ${#numbers.formatDecimal(item.balance, 4,2)} + ' Zebra ' + ' Animal Type: ' + ${item.animalType} "/>
+<span  th:case="false"
+   th:text="'Bad guy ' +  ${iter.index+1} + ' ' + ${item.king}+' Name: ' + ${item.name}  + ' Balance: '
++ ${#numbers.formatDecimal(item.balance, 4,2)} + ' Zebra ' + ' Animal Type: ' + ${item.animalType}"/></p>
+<p th:each="item, iter : ${accounts}"
+   th:unless="${item.king} == true" th:style="|color: black|"
+   th:switch="${item.good}">
+  <button type="button">Click Me!</button>
+<span th:case="true"
+      th:text="'Good one ' + ${iter.index+1} + ' ' + ${item.king}+' Name: ' + ${item.name}  + ' Balance: '
++ ${#numbers.formatDecimal(item.balance, 4,2)} + ' Zebra ' + ' Animal Type: ' + ${item.animalType} "/>
+<span  th:case="false"
+       th:text="'Bad guy ' +  ${iter.index+1} + ' ' + ${item.king}+' Name: ' + ${item.name}  + ' Balance: '
++ ${#numbers.formatDecimal(item.balance, 4,2)} + ' Zebra ' + ' Animal Type: ' + ${item.animalType}"/></p>
+</body>
+</html>
