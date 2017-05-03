@@ -27,11 +27,13 @@ public class HelloStyledWebController {
 
   @RequestMapping("/web/greetingstyled")
   public String greeting(Model model, @RequestParam("name") String username){
+    int randomNumber = (int) (Math.random()*30);
     model.addAttribute("styledText", hellos);
     model.addAttribute("name", username);
     model.addAttribute("id", atomicLong.getAndIncrement());
-    int randomNumber = (int) (Math.random() * 4);
-    model.addAttribute("color", colors[randomNumber]);
+    model.addAttribute("length", colors.length);
+    model.addAttribute("color", colors);
+    model.addAttribute("randomNumber", randomNumber);
     return "greetingstyled";
   }
 }
