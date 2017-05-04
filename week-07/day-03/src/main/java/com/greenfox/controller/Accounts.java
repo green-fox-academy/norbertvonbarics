@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Accounts {
   @RequestMapping("/Exercise1")
   public String accountController(Model model) {
-    BankAccount simba = new BankAccount("simba", "2000", "lion");
+    BankAccount simba = new BankAccount("simba", 2000, "lion");
     model.addAttribute("simba", simba);
     return "AccountTemplate1";
 

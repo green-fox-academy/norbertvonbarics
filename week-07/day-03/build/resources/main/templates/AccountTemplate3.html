@@ -5,25 +5,33 @@
   <title>Title</title>
 </head>
 <body>
+<form ACTION="#" th:action="@{/Exercise10}" th:object="${item}" method="POST">
+  <input type="submit" th:field="*{balance}"/>
+
 <p th:each="item, iter : ${accounts}"
    th:if="${item.king} == true" th:style="|color: gold|"
    th:switch="${item.good}">
-  <button type="button">Click Me!</button>
+
 <span th:case="true"
    th:text=" 'Good one ' + ${iter.index+1} + ' ' + ${item.king}+' Name: ' + ${item.name}  + ' Balance: '
 + ${#numbers.formatDecimal(item.balance, 4,2)} + ' Zebra ' + ' Animal Type: ' + ${item.animalType} "/>
 <span  th:case="false"
    th:text="'Bad guy ' +  ${iter.index+1} + ' ' + ${item.king}+' Name: ' + ${item.name}  + ' Balance: '
 + ${#numbers.formatDecimal(item.balance, 4,2)} + ' Zebra ' + ' Animal Type: ' + ${item.animalType}"/></p>
+</form>
+
+<form ACTION="#" th:action="@{/Exercise10}" th:object="${item}" method="POST">
+  <input type="submit" th:field="*{balance}"/>
 <p th:each="item, iter : ${accounts}"
    th:unless="${item.king} == true" th:style="|color: black|"
    th:switch="${item.good}">
-  <button type="button">Click Me!</button>
+
 <span th:case="true"
       th:text="'Good one ' + ${iter.index+1} + ' ' + ${item.king}+' Name: ' + ${item.name}  + ' Balance: '
 + ${#numbers.formatDecimal(item.balance, 4,2)} + ' Zebra ' + ' Animal Type: ' + ${item.animalType} "/>
 <span  th:case="false"
        th:text="'Bad guy ' +  ${iter.index+1} + ' ' + ${item.king}+' Name: ' + ${item.name}  + ' Balance: '
 + ${#numbers.formatDecimal(item.balance, 4,2)} + ' Zebra ' + ' Animal Type: ' + ${item.animalType}"/></p>
+</form>
 </body>
 </html>

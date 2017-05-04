@@ -7,12 +7,12 @@ import lombok.Getter;
 @AllArgsConstructor
 public class BankAccount {
   String name;
-  String balance;
+  int balance;
   String animalType;
   boolean king;
   boolean good;
 
-  public BankAccount(String name, String balance, String animalType) {
+  public BankAccount(String name, int balance, String animalType) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
