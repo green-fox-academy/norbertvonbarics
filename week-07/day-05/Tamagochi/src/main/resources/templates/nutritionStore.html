@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>NutritionStore</title>
 </head>
-<!--
 <body>
-<form method="post" th:action="">
-  <span th:text="${todo.name}"></span>
+<form method="post" th:action="@{setFood}">
   <input type="submit" value="setFood"/>
 </form>
--->
+<form method="post" th:action="@{setDrink}">
+  <input type="submit" value="setDrink"/>
+</form>
 </body>
 </html>

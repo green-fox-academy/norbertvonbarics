@@ -13,11 +13,9 @@ public class MainController {
 
   @RequestMapping("/tamagotchi")
   public String tamagotchiControl(Model model) {
-    mrGreen.setName("floki");
+    mrGreen.setName("Floki");
     mrGreen.setDrink("water");
     mrGreen.setFood("snack");
-    mrGreen.addTrick("fetch");
-    mrGreen.addTrick("bark");
     model.addAttribute("tricks", mrGreen.getTricks());
     model.addAttribute("name", mrGreen.getName());
     model.addAttribute("food", mrGreen.getFood());
@@ -30,6 +28,6 @@ public class MainController {
   @RequestMapping("/nutritionStore")
   public String nutritionStore(Model model) {
 
-    return "index";
+    return "nutritionStore";
   }
 }

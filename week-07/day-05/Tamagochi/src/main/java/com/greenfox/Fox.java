@@ -1,6 +1,7 @@
 package com.greenfox;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,7 +18,7 @@ public class Fox {
 
   public Fox() {
 this.name = "fox";
-this.tricks = new ArrayList<>();
+this.tricks = Arrays.asList("fetch", "bark");
 this.food = "hunger";
 this.drink =  "thirst";
   }
