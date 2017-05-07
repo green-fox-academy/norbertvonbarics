@@ -17,10 +17,10 @@ public class Fox {
   String drink;
 
   public Fox() {
-this.name = "fox";
-this.tricks = Arrays.asList("fetch", "bark");
-this.food = "hunger";
-this.drink =  "thirst";
+this.name = "Floki";
+this.tricks = new ArrayList<>(Arrays.asList("fetch", "bark"));
+this.food = "snack";
+this.drink =  "water";
   }
 
   public void addTrick(String trick) {

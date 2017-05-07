@@ -7,15 +7,17 @@
 <body>
 <ul>
   <li>
-    <a href="/">
+    <a th:href="@{/tamagotchi}">
       Information
     </a>
   </li>
 </ul>
 <img src="greenfox.png" alt="greenfoxlogo"/>
 <ul>
-  <li>Write HTML</li>
-  <li>Code in JAVA</li>
+  <li><a th:href="@{/nutritionStore}">Nutrition </a></li>
+  <li><a th:href="@{/trickview}">
+    Tricks
+  </a></li>
 </ul>
 
 <p th:text="'This is ' + ${name} + '. Currently living on ' + ${food} + ' and ' + ${drink} + '. He knows ' + ${trickSize} + ' tricks!'"> introduction </p>
