@@ -1,0 +1,31 @@
+* {
+  margin: 2px;
+}
+
+td {
+  border: 1px solid black;
+  display: inline-block;
+  text-align: center;
+}
+
+th {
+  display: inline-block;
+  text-align: center;
+}
+
+.id {
+  width: 20px;
+}
+
+.action {
+  width: 100px;
+}
+
+.urgent {
+  width: 70px;
+}
+
+.done {
+  width: 70px;
+}
+

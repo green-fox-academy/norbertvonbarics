@@ -21,6 +21,6 @@ public class TodoApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    todoRepo.save(new Todo("new task 4", false, false));
+    //todoRepo.save(new Todo("new task 4", false, false));
   }
 }
