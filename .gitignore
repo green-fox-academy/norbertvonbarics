@@ -1,3 +1,4 @@
+gradle
 out
 *.class
 .idea
@@ -6,6 +7,7 @@ out
 *.xml
 *.mp3
 *.csv
+*.jar
 
 gradle-app.setting
 !gradle-wrapper.jar
