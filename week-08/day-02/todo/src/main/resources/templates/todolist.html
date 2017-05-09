@@ -7,12 +7,12 @@
 <body>
 <h1>TODOLIST</h1>
 <table>
-  <tr>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+  <tr th:each="entry : ${todoRepo}">
+    <td th:text="${entry.id}">1</td>
+    <td th:text="${entry.title}">2</td>
+    <td th:text="${entry.urgent}">3</td>
+    <td th:text="${entry.done}">4</td>
   </tr>
-
 </table>
 </body>
 </html>
