@@ -7,6 +7,12 @@
 </head>
 <body>
 <h1>TODOS FOR TODAY</h1>
+
+<form method="post" action="/todo/addTodo">
+  <input th:type="text" name="newTodo"/>
+  <input th:type="submit" value="add"/>
+</form>
+
 <table>
   <tr>
     <th class="id">ID</th>

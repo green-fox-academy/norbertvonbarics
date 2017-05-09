@@ -1,5 +1,6 @@
 * {
   margin: 2px;
+  color: magenta;
 }
 
 td {
@@ -18,7 +19,7 @@ th {
 }
 
 .action {
-  width: 100px;
+  width: 150px;
 }
 
 .urgent {

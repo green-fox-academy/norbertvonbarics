@@ -29,6 +29,10 @@ public class Todo {
     this.done = Done;
   }
 
+  public Todo(String title) {
+    this.title = title;
+  }
+
   @Override
   public String toString() {
     return "Todo{" +

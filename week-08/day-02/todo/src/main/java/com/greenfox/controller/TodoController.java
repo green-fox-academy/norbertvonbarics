@@ -33,4 +33,10 @@ public class TodoController {
     }
     return "todolist";
   }
+
+  @RequestMapping("/addTodo")
+  public String addTodo(@RequestParam(name= "newTodo") String newTodo) {
+    todoRepo.save(new Todo(newTodo));
+    return "redirect:/todo/";
+  }
 }
