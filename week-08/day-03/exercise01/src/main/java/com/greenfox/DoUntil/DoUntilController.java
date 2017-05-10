@@ -14,7 +14,6 @@ public class DoUntilController {
 
   @RequestMapping(value = "/dountil/{what}", method = RequestMethod.POST)
   public Object doUntil (@PathVariable (name = "what") String what, @RequestBody() DoUntil until){
-    System.out.println(until.getUntil());
     if (what.equals("sum")){
       return new Sum(until.getUntil());
     } else if (what.equals("factor")){
