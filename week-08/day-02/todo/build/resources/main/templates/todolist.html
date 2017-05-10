@@ -25,6 +25,8 @@
     <td class="action" th:text="${entry.title}">2</td>
     <td class="urgent" th:text="${entry.urgent}">3</td>
     <td class="done" th:text="${entry.done}">4</td>
+    <td class="delete"><a th:href="@{/todo/deleteTodo(delete=${entry.id})}">delete</a></td>
+    <td class="edit"><a th:href="@{/todo/edit(id=${entry.id})}">edit</a></td>
   </tr>
 </table>
 </body>
