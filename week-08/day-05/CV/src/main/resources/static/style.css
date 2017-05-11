@@ -1,0 +1,98 @@
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "starwars";
+  src: url(./starjedi.ttf) format("truetype");
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+.headerpic {
+  width: 100%;
+  position: relative;
+  opacity: .8;
+}
+
+h3 {
+  font-size: 25px;
+  margin: 15px 0 0 0;
+}
+
+.myname {
+  position: absolute;
+  font-size: 70px;
+  top: 100px;
+}
+
+.hi {
+  position: absolute;
+  font-size: 30px;
+  top: 80px;
+}
+
+.hi,
+.myname {
+  text-shadow: 10px 10px 30px rgb(80, 80, 80);
+  color: white;
+  font-family: starwars, 'Fjalla One', sans-serif;
+  text-align: center;
+  margin: 30px 25%;
+}
+
+.addwork {
+  text-align: center;
+}
+
+.workplaces {
+  height: 50px;
+  padding: 10px;
+  transition: 1s;
+}
+
+.workplaces {
+  font-size: 30px;
+  margin: 40px 25%;
+  background-color: rgb(255, 255, 255);
+  width: 700px;
+  line-height: 2;
+  position: relative;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.workplaces:hover {
+  font-size: 40px;
+  margin: 30px 45% 0 30px;
+  text-shadow: 20px 20px 20px rgb(170, 170, 170);
+  transition: 1s;
+}
+
+.education:hover {
+  margin: 30px 0 30px 45%;
+  text-shadow: 20px 20px 20px rgb(170, 170, 170);
+  transition: 1s;
+}
+
+.footerpic {
+  position: relative;
+  width: 100%;
+  opacity: .8;
+}
+
+.saberstext {
+  font-size: 70px;
+  color: #5abe25;
+  text-shadow: 10px 10px 30px rgb(80, 80, 80);
+  text-align: center;
+  font-family: starwars, 'Fjalla One', sans-serif;
+}
+
+.link {
+  color: #5abe25;
+  text-decoration: none;
+}
