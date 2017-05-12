@@ -1,23 +1,32 @@
 package com.greenfox.reddit.controller;
 
 import com.greenfox.reddit.model.Post;
+import com.greenfox.reddit.model.Posts;
 import com.greenfox.reddit.services.PostRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin("*")
 @RestController
-public class RedditController {
+public class PostsController {
 
   @Autowired
   PostRepository postRepo;
 
+  @Autowired
+  Posts list;
+
   @RequestMapping(value = "/posts", method = RequestMethod.GET)
   public Object list(){
-    return postRepo.findAll();
+    list.setPosts((List<Post>)postRepo.findAll());
+
+    return list;
   }
 
   @RequestMapping(value = "/posts", method = RequestMethod.POST)
