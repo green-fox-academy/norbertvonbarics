@@ -32,15 +32,4 @@ public class CvController {
     cvRepo.delete(id);
     return "redirect:/";
   }
-/*
-  Work getWork(long id) {
-    Iterable<Work> list = cvRepo.findAll();
-    Work aWork = new Work();
-    for (Work work : list) {
-      if (work.getId() == id) {
-        aWork = work;
-      }
-    }
-    return aWork;
-  }*/
 }
