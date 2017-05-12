@@ -20,7 +20,7 @@
   </form>
 
   <h2 class="places">Workplaces:</h2>
-  <tr th:each="entry : ${allCV}">
+  <tr th:each="entry : ${workList}">
     <section class="workplaces">
       <td th:text="${entry.workplace}">workplace</td>
       <td ><a class="link" th:href="@{/deleteWork(delete=${entry.id})}">X</a></td>

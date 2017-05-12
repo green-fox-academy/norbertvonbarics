@@ -17,7 +17,7 @@ public class CvController {
 
   @RequestMapping("/")
   public String list(Model model) {
-    model.addAttribute("allCV", cvRepo.findAll());
+    model.addAttribute("workList", cvRepo.findAll());
     return "index";
   }
 
