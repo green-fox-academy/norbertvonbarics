@@ -45,6 +45,14 @@ h3 {
   margin: 30px 25%;
 }
 
+.places {
+  font-size: 30px;
+  text-shadow: 10px 10px 30px rgb(80, 80, 80);
+  color: white;
+  font-family: starwars, 'Fjalla One', sans-serif;
+  margin: 30px;
+}
+
 .addwork {
   text-align: center;
 }

@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <link th:href="@{style.css}" rel="stylesheet" type="text/css"/>
   <link th:href="@{https://fonts.googleapis.com/css?family=Fjalla+One|Lato}" rel="stylesheet"/>
-  <title>TodoList</title>
+  <title>myCV</title>
 </head>
 <body>
 
@@ -13,13 +13,13 @@
   <h3 class="hi">Hi, my name is </h3>
   <h1 class="myname">Norbert Barics</h1>
 </header>
-
 <main class="addwork">
   <form method="post" action="/addWork">
     <input th:type="text" name="addWork"/>
     <input th:type="submit" value="yepp...work again..."/>
   </form>
 
+  <h2 class="places">Workplaces:</h2>
   <tr th:each="entry : ${allCV}">
     <section class="workplaces">
       <td th:text="${entry.workplace}">workplace</td>
