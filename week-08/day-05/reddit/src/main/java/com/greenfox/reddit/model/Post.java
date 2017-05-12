@@ -18,21 +18,30 @@ public class Post {
   String title;
   String href;
   Timestamp timestamp;
-  int score;
+  int score = 0;
 
   public Post() {
   }
 
-  public Post(String title, String href, Timestamp timestamp, int score) {
+  public Post(String title, String href, int score) {
     this.title = title;
     this.href = href;
-    this.timestamp = timestamp;
+    this.timestamp = new Timestamp(System.currentTimeMillis());
     this.score = score;
   }
 
   public Post(String title, String href) {
     this.title = title;
     this.href = href;
+    this.timestamp = new Timestamp(System.currentTimeMillis());
+  }
+
+  public void upvote() {
+    score++;
+  }
+
+  public void downvote() {
+    score--;
   }
 
   @Override

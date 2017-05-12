@@ -2,8 +2,8 @@ package com.greenfox.reddit.controller;
 
 import com.greenfox.reddit.model.Post;
 import com.greenfox.reddit.services.PostRepository;
-import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,18 +27,19 @@ public class RedditController {
     return newPost;
   }
 
-  @RequestMapping("/posts/{id}/upvote")
-  public Object upvote(){
-    return null;
+  @RequestMapping(value = "/posts/{id}/upvote", method = RequestMethod.PUT)
+  public Object upvote(@PathVariable(name = "id") long id){
+    Post upvotePost = postRepo.findOne(id);
+    upvotePost.upvote();
+    postRepo.save(upvotePost);
+    return upvotePost;
   }
 
   @RequestMapping("/posts/{id}/downvote")
-  public Object downvote(){
-    return null;
-  }
-
-  @RequestMapping("/posts/{id}/")
-  public Object singlePost(){
-    return null;
+  public Object downvote(@PathVariable(name = "id") long id){
+    Post downvotePost = postRepo.findOne(id);
+    downvotePost.downvote();
+    postRepo.save(downvotePost);
+    return downvotePost;
   }
 }
