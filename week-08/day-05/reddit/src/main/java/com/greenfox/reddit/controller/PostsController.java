@@ -44,7 +44,7 @@ public class PostsController {
     return upvotePost;
   }
 
-  @RequestMapping("/posts/{id}/downvote")
+  @RequestMapping(value = "/posts/{id}/downvote", method = RequestMethod.PUT)
   public Object downvote(@PathVariable(name = "id") long id){
     Post downvotePost = postRepo.findOne(id);
     downvotePost.downvote();
