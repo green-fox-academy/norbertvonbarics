@@ -9,17 +9,15 @@
 </head>
 <body class="container">
 <h1 class="text-center">TODOS FOR TODAY</h1>
-<form class="center-block" method="post" action="/todo/addTodo">
+<form method="post" action="/todo/addTodo">
   <input th:type="text" name="newTodo"/>
-  <div>
   <input class="btn btn-warning" th:type="submit" value="add"/>
-  </div>
 </form>
-<table>
+<table class="table table-striped">
   <tr>
     <th class="col-md-2">ID</th>
     <th class="col-md-2">ACTION</th>
-    <th class="urgent col-md-2">URGENT</th>
+    <th class="col-md-2">URGENT</th>
     <th class="col-md-2">DONE</th>
     <th class="col-md-2">DELETE</th>
     <th class="col-md-2">EDIT</th>
