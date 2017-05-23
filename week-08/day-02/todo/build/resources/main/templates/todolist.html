@@ -1,33 +1,39 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <link th:href="@{main.css}" rel="stylesheet" type="text/css"/>
+  <!--<link th:href="@{main.css}" rel="stylesheet" type="text/css"/>-->
   <title>TodoList</title>
 </head>
-<body>
-<h1>TODOS FOR TODAY</h1>
-
-<form method="post" action="/todo/addTodo">
+<body class="container">
+<h1 class="text-center">TODOS FOR TODAY</h1>
+<form class="center-block" method="post" action="/todo/addTodo">
   <input th:type="text" name="newTodo"/>
-  <input th:type="submit" value="add"/>
+  <div>
+  <input class="btn btn-warning" th:type="submit" value="add"/>
+  </div>
 </form>
-
 <table>
   <tr>
-    <th class="id">ID</th>
-    <th class="action">ACTION</th>
-    <th class="urgent">URGENT</th>
-    <th class="done">DONE</th>
+    <th class="col-md-2">ID</th>
+    <th class="col-md-2">ACTION</th>
+    <th class="urgent col-md-2">URGENT</th>
+    <th class="col-md-2">DONE</th>
+    <th class="col-md-2">DELETE</th>
+    <th class="col-md-2">EDIT</th>
   </tr>
   <tr th:each="entry : ${todoRepo}">
-    <td class="id" th:text="${entry.id}">1</td>
-    <td class="action" th:text="${entry.title}">2</td>
-    <td class="urgent" th:text="${entry.urgent}">3</td>
-    <td class="done" th:text="${entry.done}">4</td>
-    <td class="delete"><a th:href="@{/todo/deleteTodo(delete=${entry.id})}">delete</a></td>
-    <td class="edit"><a th:href="@{/todo/edit(id=${entry.id})}">edit</a></td>
+    <td class="col-md-3" th:text="${entry.id}">1</td>
+    <td class="col-md-3" th:text="${entry.title}">2</td>
+    <td class="col-md-3" th:text="${entry.urgent}">3</td>
+    <td class="col-md-3" th:text="${entry.done}">4</td>
+    <td class=" col-md-3"><a class="btn btn-danger" style="text-decoration: none" th:href="@{/todo/deleteTodo(delete=${entry.id})}">delete</a></td>
+    <td class="col-md-3"><a class="btn btn-info" th:href="@{/todo/edit(id=${entry.id})}">edit</a></td>
   </tr>
 </table>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
